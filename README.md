@@ -8,17 +8,25 @@ It is an open-source and free project, which is faced with the drawing lovers, p
 
 ```
 .
+├── admin.php
 ├── css
+│   ├── login.css
 │   └── MainStyle.css
+├── index.php
+├── install.php
 ├── js
+│   ├── interactions.js
 │   └── MainJS.js
 ├── LICENSE
+├── login.php
 ├── README.md
+├── register.php
 └── resources
-    ├── background
-    └── icons
+    ├── backgrounds
+    ├── icons
+    └── logo
 
-5 directories, 4 files
+6 directories, 11 files
 ```
 # Dependencies
 
