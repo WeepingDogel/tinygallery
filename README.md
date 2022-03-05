@@ -12,6 +12,7 @@ It is an open-source and free project, which is faced with the drawing lovers, p
 ├── css
 │   ├── login.css
 │   └── MainStyle.css
+├── gallery
 ├── index.php
 ├── install.php
 ├── js
@@ -26,7 +27,7 @@ It is an open-source and free project, which is faced with the drawing lovers, p
     ├── icons
     └── logo
 
-6 directories, 11 files
+7 directories, 11 files
 ```
 # Dependencies
 
