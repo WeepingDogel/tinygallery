@@ -1,3 +1,18 @@
 /*
 Filename: MainStyle.css
 */
+
+body{
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+
+/* The style of the top */
+
+.top{
+    background-color: white;
+    
+}
+
+/*The style of the top*/
