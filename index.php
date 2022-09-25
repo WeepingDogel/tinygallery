@@ -9,5 +9,10 @@
             <h1>TinyGallery</h1>
             <h2>HomePage</h2>
         </div>
+        <div class="content">
+            <div>
+                
+            </div>
+        </div>
     </body>
 </html>
