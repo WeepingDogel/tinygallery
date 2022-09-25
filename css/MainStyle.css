@@ -16,3 +16,11 @@ body{
 }
 
 /*The style of the top*/
+
+
+.content {
+    background-color: aqua;
+    margin: 0;
+    padding: 20px;
+    
+}
