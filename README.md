@@ -10,26 +10,14 @@ It is an open-source and free project, which is faced with the drawing lovers, p
 
 ```
 .
-├── admin.php
 ├── css
-│   ├── login.css
 │   └── MainStyle.css
-├── gallery
-├── index.php
-├── install.php
+├── index.html
 ├── js
-│   ├── interactions.js
-│   └── MainJS.js
 ├── LICENSE
-├── login.php
-├── README.md
-├── register.php
-└── resources
-    ├── backgrounds
-    ├── icons
-    └── logo
+└── README.md
 
-7 directories, 11 files
+2 directories, 4 files
 ```
 # Dependencies
 
