@@ -1,0 +1,27 @@
+/* 
+Author: WeepingDogel
+File:  FontOfWords.css
+Description: This is the Stylesheet of the Fonts.
+*/
+.centerTitle{
+    /* The title in the center of a box. */
+    font-size: 30px;
+    font-weight: lighter;
+    color: #000;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+    line-height: 50px;
+}
+
+.leftTitle{
+    font-size: 20px;
+    font-weight: lighter;
+    border-bottom: solid 1px black;
+    color: #000;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 29px;
+    text-indent: 2em;
+    line-height: 30px;
+}
