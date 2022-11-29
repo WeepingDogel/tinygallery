@@ -1,0 +1,79 @@
+/* 
+Author: WeepingDogel
+File:  LoginAndRegisterPage.css
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, skyblue, #407c94);
+}
+.Panel{
+    width: 800px;
+    height: 500px;
+    background-color: white;
+    margin-top: 100px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.headBar{
+    width: 800px;
+    height: 135px;
+    background-color: #407c94;
+    transition: 500ms;
+}
+.headBar:hover{
+    transition: 500ms;
+    background-color: skyblue;
+}
+.loginForm{
+    margin-top: 70px;
+}
+.formInput{
+    display: block;
+    width: 350px;
+    height: 35px;
+    margin: 20px auto;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px #757575;
+    text-indent: 0.5em;
+    font-size: 18px;
+    transition: 500ms;
+}
+.formInput:hover{
+    transition: 500ms;
+    color: #407c94;
+    border-bottom: solid 2px #407c94;
+    font-weight: bolder;
+}
+.formInput:hover .formInput:focus{
+    transition: 500ms;
+    color: #407c94;
+    border-bottom: solid 2px #407c94;
+    font-weight: bolder;
+}
+.loginButton{
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    border: none;
+    background-color: #407c94;
+    color: white;
+    width: 350px;
+    height: 35px;
+    font-size: 18px;
+    transition: 500ms;
+}
+.loginButton:hover{
+    transition: 500ms;
+    background-color: skyblue;
+}
+.registerForm{
+    display: none;
+    width: 350px;
+    height: 200px;
+    background-color: #f1f1f1;
+}
