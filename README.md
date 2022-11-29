@@ -11,13 +11,17 @@ It is an open-source and free project, which is faced with the drawing lovers, p
 ```
 .
 ├── css
+│   ├── FontOfWords.css
+│   ├── LoginAndRegisterPage.css
 │   └── MainStyle.css
 ├── index.html
 ├── js
+│   └── Main.js
 ├── LICENSE
+├── login_and_register.html
 └── README.md
 
-2 directories, 4 files
+2 directories, 8 files
 ```
 # Dependencies
 
