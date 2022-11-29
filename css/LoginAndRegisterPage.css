@@ -12,36 +12,43 @@ body{
     background-image: linear-gradient(to right, skyblue, #407c94);
 }
 .Panel{
-    width: 800px;
-    height: 500px;
+    width: 600px;
+    height: 400px;
     background-color: white;
-    margin-top: 100px;
+    margin-top: 150px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    /* border-radius: 10px; */
 }
 .headBar{
-    width: 800px;
+    width: 600px;
     height: 135px;
+    margin: 0 auto;
     background-color: #407c94;
     transition: 500ms;
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */
 }
 .headBar:hover{
     transition: 500ms;
     background-color: skyblue;
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */
 }
 .loginForm{
-    margin-top: 70px;
+    margin-top: 50px;
 }
 .formInput{
     display: block;
     width: 350px;
     height: 35px;
-    margin: 20px auto;
+    margin: 15px auto;
     outline: none;
     border: none;
     border-bottom: solid 2px #757575;
     text-indent: 0.5em;
     font-size: 18px;
     transition: 500ms;
+    font-weight: bolder;
 }
 .formInput:hover{
     transition: 500ms;
@@ -70,10 +77,4 @@ body{
 .loginButton:hover{
     transition: 500ms;
     background-color: skyblue;
-}
-.registerForm{
-    display: none;
-    width: 350px;
-    height: 200px;
-    background-color: #f1f1f1;
 }
