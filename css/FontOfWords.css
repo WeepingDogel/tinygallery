@@ -31,6 +31,7 @@ Description: This is the Stylesheet of the Fonts.
     display: block;
     line-height: 30px;
     color: #757575;
+    transition: 500ms;
 }
 .textProfile{
     font-family: Arial, Helvetica, sans-serif;
@@ -39,4 +40,19 @@ Description: This is the Stylesheet of the Fonts.
     font-weight: lighter;
     color: #757575;
     display: block;
+    transition: 500ms;
+}
+.Login_And_Register_Title{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 135px;
+    transition: 500ms;
+}
+.Login_And_Register_Title:hover{
+    transition: 500ms;
+    font-size: 48px;
+    text-shadow: 1px 0px 10px skyblue;
 }
