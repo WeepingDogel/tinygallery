@@ -14,16 +14,29 @@
         <title>Sign Up or Sign In | TinyGallery</title>
     </head>
     <body>
-        <div class="Panel">
+        <div id="Panel_Login" class="Panel_Login">
             <div class="headBar">
-                <h1 class="Login_And_Register_Title">Sign Up or Sign In ?</h1>
+                <h1 class="Login_And_Register_Title">Sign In</h1>
             </div>
             <form class="loginForm">
                 <input class="formInput" type="text" placeholder="Username" />
                 <input class="formInput" type="password" placeholder="Password" />
-                <input class="loginButton" value="Sign In" type="submit" />
-                
+                <input class="submitButton" value="Sign In" type="submit" />
             </form>
+            <button class="selectButton" type="button" onclick="Register();">Sign Up</button>
+        </div>
+        <div id="Panel_Register" class="Panel_Register">
+            <div class="headBar">
+                <h1 class="Login_And_Register_Title">Sign Up</h1>
+            </div>
+            <form>
+                <input class="formInput" type="text" placeholder="Username"/>
+                <input class="formInput" type="password" placeholder="Password"/>
+                <input class="formInput" type="password" placeholder="Repeat Password" />
+                <input class="formInput" type="password" placeholder="Email" />
+                <input class="submitButton" type="submit" value="Sign Up"/>
+            </form>
+            <button class="selectButton" type="button" onclick="Login();">Sign In</button>
         </div>
         <script src="./js/Main.js"></script>
     </body>
