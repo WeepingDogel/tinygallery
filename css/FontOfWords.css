@@ -45,7 +45,7 @@ Description: This is the Stylesheet of the Fonts.
 .Login_And_Register_Title{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
+    font-size: 48px;
     font-weight: lighter;
     text-align: center;
     line-height: 135px;
@@ -53,5 +53,5 @@ Description: This is the Stylesheet of the Fonts.
 }
 .Login_And_Register_Title:hover{
     transition: 500ms;
-    font-size: 48px;
+    font-size: 64px;
 }
