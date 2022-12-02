@@ -11,7 +11,8 @@ body{
     justify-content: center;
     background-image: linear-gradient(to right, skyblue, #407c94);
 }
-.Panel{
+.Panel_Login{
+    /* display: none; */
     width: 600px;
     height: 400px;
     background-color: white;
@@ -56,15 +57,15 @@ body{
     border-bottom: solid 2px #407c94;
     font-weight: bolder;
 }
-.formInput:hover .formInput:focus{
+.formInput:focus{
     transition: 500ms;
     color: #407c94;
     border-bottom: solid 2px #407c94;
     font-weight: bolder;
 }
-.loginButton{
+.submitButton{
     display: block;
-    margin: 0 auto;
+    margin: 5px auto;
     outline: none;
     border: none;
     background-color: #407c94;
@@ -74,7 +75,39 @@ body{
     font-size: 18px;
     transition: 500ms;
 }
-.loginButton:hover{
+.submitButton:hover{
     transition: 500ms;
     background-color: skyblue;
+}
+.loginButton:active{
+    transition: 500ms;
+    color: black;
+    background-color: #c4c4c4;
+}
+.selectButton{
+    transition: 500ms;
+    width: 350px;
+    height: 35px;
+    font-size: 18px;
+    margin: 5px auto;
+    display: block;
+    background-color: #f1f1f1;
+    outline: none;
+    border: none;
+}
+.selectButton:hover{
+    transition: 500ms;
+    background-color: #cacaca;
+}
+.selectButton:active{
+    transition: 500ms;
+    background-color: #c4c4c4;
+}
+.Panel_Register{
+    display: none;
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    margin-top: 120px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
