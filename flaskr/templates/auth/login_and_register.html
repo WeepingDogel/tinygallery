@@ -1,0 +1,43 @@
+<!-- 
+    Author: WeepingDogel
+    File: login_and_register.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="static/css/MainStyle.css"/>
+        <link type="text/css" rel="stylesheet" href="static/css/LoginAndRegisterPage.css"/>
+        <link type="text/css" rel="stylesheet" href="static/css/FontOfWords.css" />
+        <title>Sign Up or Sign In | TinyGallery</title>
+    </head>
+    <body>
+        <div id="Panel_Login" class="Panel_Login">
+            <div class="headBar">
+                <h1 class="Login_And_Register_Title">Sign In</h1>
+            </div>
+            <form action="http://localhost:5000/auth" class="loginForm" method="post">
+                <input name="username" class="formInput" type="text" placeholder="Username" />
+                <input name="password" class="formInput" type="password" placeholder="Password" />
+                <input name="submit" class="submitButton" value="Sign In" type="submit" />
+            </form>
+            <button class="selectButton" type="button" onclick="Register();">Sign Up</button>
+        </div>
+        <div id="Panel_Register" class="Panel_Register">
+            <div class="headBar">
+                <h1 class="Login_And_Register_Title">Sign Up</h1>
+            </div>
+            <form action="http://localhost:5000/register" method="post" class="loginForm">
+                <input name="userName_Register" class="formInput" type="text" placeholder="Username"/>
+                <input name="passWord_Register" class="formInput" type="password" placeholder="Password"/>
+                <input name="passWord_Repeat" class="formInput" type="password" placeholder="Repeat Password" />
+                <input name="Email" class="formInput" type="text" placeholder="Email" />
+                <input class="submitButton" type="submit" value="Sign Up" />
+            </form>
+            <button class="selectButton" type="button" onclick="Login();">Sign In</button>
+        </div>
+        <script src="static/js/Main.js"></script>
+    </body>
+</html>
