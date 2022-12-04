@@ -7,6 +7,7 @@ import time
 from flask import Flask
 from flask import request
 from flask import render_template
+from flask import flash
 from markupsafe import escape
 from string import Template as tem
 
@@ -22,13 +23,16 @@ def login_and_register():
 
 @app.route('/auth', methods=['GET', 'POST'])
 def auth():
+    database = sqlite3.connect("flaskr/database.db")
+    cur = database.cursor()
+    Authen = cur.execute("SELECT UserName FROM USERS;")
     if request.method == 'POST':
         userName = request.form['username']
         passWord = request.form['password']
-        
-    return render_template('auth/login_and_register.html')
+    
+    return render_template("index.html")
 
-@app.route('/register', methods=['GET','POST'])
+@app.route('/register', methods=['GET','POST']) # Register 
 def register():
     database = sqlite3.connect('flaskr/database.db')
     addUser = tem('''
