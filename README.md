@@ -8,18 +8,30 @@ It is an open-source and free project, which is faced with the drawing lovers, p
 
 ```
 .
-├── css
-│   ├── FontOfWords.css
-│   ├── LoginAndRegisterPage.css
-│   └── MainStyle.css
-├── index.html
-├── js
-│   └── Main.js
-├── LICENSE
-├── login_and_register.html
-└── README.md
+├── flaskr
+│   ├── database.db
+│   ├── db.py
+│   ├── __init__.py
+│   ├── static
+│   │   ├── avatars
+│   │   ├── css
+│   │   │   ├── FontOfWords.css
+│   │   │   ├── LoginAndRegisterPage.css
+│   │   │   └── MainStyle.css
+│   │   ├── images
+│   │   └── js
+│   │       └── Main.js
+│   └── templates
+│       ├── auth
+│       │   └── login_and_register.html
+│       └── index.html
+├── README.md
+├── setup.py
+└── tests
+    ├── test_auth.py
+    └── test_db.py
 
-2 directories, 8 files
+9 directories, 13 files
 ```
 # Dependencies
 
