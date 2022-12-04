@@ -11,105 +11,216 @@ body{
     justify-content: center;
     background-image: linear-gradient(to right, skyblue, #407c94);
 }
-.Panel_Login{
-    /* display: none; */
-    width: 600px;
-    height: 400px;
-    background-color: white;
-    margin-top: 150px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: 500ms;
-    /* border-radius: 10px; */
+@media screen and (min-width: 600px){
+    .Panel_Login{
+        /* display: none; */
+        width: 600px;
+        height: 400px;
+        background-color: white;
+        margin-top: 150px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        transition: 500ms;
+        /* border-radius: 10px; */
+    }
+    .headBar{
+        width: 600px;
+        height: 135px;
+        margin: 0 auto;
+        background-color: #407c94;
+        transition: 500ms;
+        /* border-top-left-radius: 10px; */
+        /* border-top-right-radius: 10px; */
+    }
+    .headBar:hover{
+        transition: 500ms;
+        background-color: skyblue;
+        /* border-top-left-radius: 10px; */
+        /* border-top-right-radius: 10px; */
+    }
+    .loginForm{
+        margin-top: 50px;
+    }
+    .formInput{
+        display: block;
+        width: 350px;
+        height: 35px;
+        margin: 15px auto;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px #757575;
+        text-indent: 0.5em;
+        font-size: 18px;
+        transition: 500ms;
+        font-weight: bolder;
+    }
+    .formInput:hover{
+        transition: 500ms;
+        color: #407c94;
+        border-bottom: solid 2px #407c94;
+        font-weight: bolder;
+    }
+    .formInput:focus{
+        transition: 500ms;
+        color: #407c94;
+        border-bottom: solid 2px #407c94;
+        font-weight: bolder;
+    }
+    .submitButton{
+        display: block;
+        margin: 5px auto;
+        outline: none;
+        border: none;
+        background-color: #407c94;
+        color: white;
+        width: 350px;
+        height: 35px;
+        font-size: 18px;
+        transition: 500ms;
+    }
+    .submitButton:hover{
+        transition: 500ms;
+        background-color: skyblue;
+    }
+    .loginButton:active{
+        transition: 500ms;
+        color: black;
+        background-color: #c4c4c4;
+    }
+    .selectButton{
+        transition: 500ms;
+        width: 350px;
+        height: 35px;
+        font-size: 18px;
+        margin: 5px auto;
+        display: block;
+        background-color: #f1f1f1;
+        outline: none;
+        border: none;
+    }
+    .selectButton:hover{
+        transition: 500ms;
+        background-color: #cacaca;
+    }
+    .selectButton:active{
+        transition: 500ms;
+        background-color: #c4c4c4;
+    }
+    .Panel_Register{
+        display: none;
+        width: 600px;
+        height: 500px;
+        background-color: white;
+        margin-top: 120px;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        transition: 500ms;
+    }
 }
-.headBar{
-    width: 600px;
-    height: 135px;
-    margin: 0 auto;
-    background-color: #407c94;
-    transition: 500ms;
-    /* border-top-left-radius: 10px; */
-    /* border-top-right-radius: 10px; */
-}
-.headBar:hover{
-    transition: 500ms;
-    background-color: skyblue;
-    /* border-top-left-radius: 10px; */
-    /* border-top-right-radius: 10px; */
-}
-.loginForm{
-    margin-top: 50px;
-}
-.formInput{
-    display: block;
-    width: 350px;
-    height: 35px;
-    margin: 15px auto;
-    outline: none;
-    border: none;
-    border-bottom: solid 2px #757575;
-    text-indent: 0.5em;
-    font-size: 18px;
-    transition: 500ms;
-    font-weight: bolder;
-}
-.formInput:hover{
-    transition: 500ms;
-    color: #407c94;
-    border-bottom: solid 2px #407c94;
-    font-weight: bolder;
-}
-.formInput:focus{
-    transition: 500ms;
-    color: #407c94;
-    border-bottom: solid 2px #407c94;
-    font-weight: bolder;
-}
-.submitButton{
-    display: block;
-    margin: 5px auto;
-    outline: none;
-    border: none;
-    background-color: #407c94;
-    color: white;
-    width: 350px;
-    height: 35px;
-    font-size: 18px;
-    transition: 500ms;
-}
-.submitButton:hover{
-    transition: 500ms;
-    background-color: skyblue;
-}
-.loginButton:active{
-    transition: 500ms;
-    color: black;
-    background-color: #c4c4c4;
-}
-.selectButton{
-    transition: 500ms;
-    width: 350px;
-    height: 35px;
-    font-size: 18px;
-    margin: 5px auto;
-    display: block;
-    background-color: #f1f1f1;
-    outline: none;
-    border: none;
-}
-.selectButton:hover{
-    transition: 500ms;
-    background-color: #cacaca;
-}
-.selectButton:active{
-    transition: 500ms;
-    background-color: #c4c4c4;
-}
-.Panel_Register{
-    display: none;
-    width: 600px;
-    height: 500px;
-    background-color: white;
-    margin-top: 120px;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
-    transition: 500ms;
+
+@media screen and (max-width: 600px) {
+    body{
+        height: 100vh;
+    }
+    .Panel_Login{
+        /* display: none; */
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        transition: 500ms;
+        /* border-radius: 10px; */
+    }
+    .headBar{
+        width: 100%;
+        height: 185px;
+        margin: 0 auto;
+        background-color: #407c94;
+        transition: 500ms;
+        /* border-top-left-radius: 10px; */
+        /* border-top-right-radius: 10px; */
+    }
+    .headBar .Login_And_Register_Title{
+        line-height: 185px;
+    }
+    .headBar:hover{
+        transition: 500ms;
+        background-color: skyblue;
+        /* border-top-left-radius: 10px; */
+        /* border-top-right-radius: 10px; */
+    }
+    .loginForm{
+        margin-top: 0px;
+    }
+    .formInput{
+        display: block;
+        width: 100%;
+        height: 35px;
+        margin: 15px auto;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px #757575;
+        text-indent: 0.5em;
+        font-size: 18px;
+        transition: 500ms;
+        font-weight: bolder;
+    }
+    .formInput:hover{
+        transition: 500ms;
+        color: #407c94;
+        border-bottom: solid 2px #407c94;
+        font-weight: bolder;
+    }
+    .formInput:focus{
+        transition: 500ms;
+        color: #407c94;
+        border-bottom: solid 2px #407c94;
+        font-weight: bolder;
+    }
+    .submitButton{
+        display: block;
+        margin: 5px auto;
+        outline: none;
+        border: none;
+        background-color: #407c94;
+        color: white;
+        width: 90%;
+        height: 35px;
+        font-size: 18px;
+        transition: 500ms;
+    }
+    .submitButton:hover{
+        transition: 500ms;
+        background-color: skyblue;
+    }
+    .loginButton:active{
+        transition: 500ms;
+        color: black;
+        background-color: #c4c4c4;
+    }
+    .selectButton{
+        transition: 500ms;
+        width: 90%;
+        height: 35px;
+        font-size: 18px;
+        margin: 5px auto;
+        display: block;
+        background-color: #f1f1f1;
+        outline: none;
+        border: none;
+    }
+    .selectButton:hover{
+        transition: 500ms;
+        background-color: #cacaca;
+    }
+    .selectButton:active{
+        transition: 500ms;
+        background-color: #c4c4c4;
+    }
+    .Panel_Register{
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        transition: 500ms;
+    }
 }

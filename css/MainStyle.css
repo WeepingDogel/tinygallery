@@ -20,195 +20,782 @@ li{
 body{
     background-color: #f1f1f1;
 }
-.topHead{
-    /* The stylesheet of the top. */
-    width: 100%;
-    height: 150px;
-    background-color: #407c94;
-    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, .2); */
-    text-align: center;
+
+/* For mobile device */
+@media screen and (max-width: 500px){
+    .topHead{
+        /* The stylesheet of the top. */
+        width: 100%;
+        height: 180px;
+        background-color: #407c94;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, .2); */
+        text-align: center;
+    }
+    .topHead h1{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        height: 100px;
+        line-height: 100px;
+        color: white;
+    }
+    .topHead .subTitle{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        color: white;
+    }
+    .menuBar{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        width: 100%;
+        height: auto;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    }
+    .menuItems{
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        text-align: center;
+        transition: 200ms;
+        /* float: left; */
+    }
+    .menuItems#menuItems_Right{
+        /* float: right; */
+        clear: both;
+    }
+    .menuItems .menuUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .menuItems .menuUrls:active{
+        color: skyblue;
+        transition: 200ms;
+    }
+    .menuItems:hover{
+        transition: 200ms;
+        background-color: #f1f1f1;
+    }
+    
+    .menuItems:hover .dropDown{
+        display: block;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDown{
+        transition: 200ms;
+        position: relative;
+        display: none;
+    }
+    .dropDownUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .dropDownItems{
+        width: 100%;
+        height: 50px;
+        background-color: #f1f1f1;
+        transition: 200ms;
+    }
+    .dropDownItems:hover{
+        background-color: white;
+        transition: 200ms;
+    }
+    .boxLine{
+        width: 100%;
+        height: auto;
+        background-color: #f1f1f1;
+        margin: 10px auto;
+    }
+    .Aside{
+        width: 100%;
+        height: 500px;
+        margin-right: 10px;
+        background-color: white;
+    }
+    .Profile{
+        width: 290px;
+        height: 200px;
+        margin: 10px auto;
+    }
+    .signButton{
+        width: 250px;
+        height: 35px;
+        line-height: 35px;
+        margin: 0px auto;
+        margin-top: 35px;
+        display: block;
+        outline: none;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        color: white;
+        background-color: #407c94;
+        text-align: center;
+        transition: 200ms;
+    }
+    .signButton:hover{
+        background-color: #c4c4c4;
+        color: black;
+        transition: 200ms;
+    }
+    .signButton:active{
+        background-color: #f1f1f1;
+        color: black;
+        transition: 200ms;
+    }
+    .Avatar{
+        background-color: #f1f1f1;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .Avatar img{
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+    }
+    
+    .Publish,.Likes{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        margin-right: 10px;
+        float: left;
+        text-align: center;
+    }
+    .Followers{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        float: left;
+        text-align: center;
+    }
+    .Publish:hover .Nums, .Publish:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Likes:hover .Nums, .Likes:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Followers:hover .Nums, .Followers:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Content{
+        width: 100%;
+        height: 500px;
+        background-color: white;
+    }
+    .PicBar{
+        width: 100%;
+        height: 500px;
+        background-color: white;
+    }
+    .footer{
+        width: 100%;
+        height: 100px;
+        background-color: #407c94;
+        text-align: center;
+        /* Infomation on the footer. */
+    }
+    .footer span{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 14px;
+        line-height: 100px;
+    }
 }
-.topHead h1{
-    font-weight: lighter;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    height: 100px;
-    line-height: 100px;
-    color: white;
+/* For middle screen device */
+@media screen and (min-width: 500px){
+    .topHead{
+        /* The stylesheet of the top. */
+        width: 100%;
+        height: 150px;
+        background-color: #407c94;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, .2); */
+        text-align: center;
+    }
+    .topHead h1{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        height: 100px;
+        line-height: 100px;
+        color: white;
+    }
+    .topHead .subTitle{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        color: white;
+    }
+    .menuBar{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        width: 100%;
+        height: 50px;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    }
+    .menuItems{
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        transition: 200ms;
+        float: left;
+    }
+    .menuItems#menuItems_Right{
+        float: right;
+    }
+    .menuItems .menuUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .menuItems .menuUrls:active{
+        color: skyblue;
+        transition: 200ms;
+    }
+    .menuItems:hover{
+        transition: 200ms;
+        background-color: #f1f1f1;
+    }
+    
+    .menuItems:hover .dropDown{
+        display: block;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDown{
+        transition: 200ms;
+        position: absolute;
+        display: none;
+    }
+    .dropDownUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .dropDownItems{
+        width: 100px;
+        height: 50px;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDownItems:hover{
+        background-color: #f1f1f1;
+        transition: 200ms;
+    }
+    .boxLine{
+        width: 100%;
+        height: auto;
+        background-color: #f1f1f1;
+        margin: 10px auto;
+    }
+    .Aside{
+        width: 100%;
+        height: 500px;
+        margin-right: 10px;
+        background-color: white;
+    }
+    .Profile{
+        width: 290px;
+        height: 200px;
+        margin: 10px auto;
+    }
+    .signButton{
+        width: 250px;
+        height: 35px;
+        line-height: 35px;
+        margin: 0px auto;
+        margin-top: 35px;
+        display: block;
+        outline: none;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        color: white;
+        background-color: #407c94;
+        text-align: center;
+        transition: 200ms;
+    }
+    .signButton:hover{
+        background-color: #c4c4c4;
+        color: black;
+        transition: 200ms;
+    }
+    .signButton:active{
+        background-color: #f1f1f1;
+        color: black;
+        transition: 200ms;
+    }
+    .Avatar{
+        background-color: #f1f1f1;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .Avatar img{
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+    }
+    
+    .Publish,.Likes{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        margin-right: 10px;
+        float: left;
+        text-align: center;
+    }
+    .Followers{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        float: left;
+        text-align: center;
+    }
+    .Publish:hover .Nums, .Publish:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Likes:hover .Nums, .Likes:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Followers:hover .Nums, .Followers:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Content{
+        width: 100%;
+        height: 500px;
+        background-color: white;
+    }
+    .PicBar{
+        width: 100%;
+        height: 500px;
+        background-color: white;
+    }
+    .footer{
+        width: 100%;
+        height: 100px;
+        background-color: #407c94;
+        text-align: center;
+        /* Infomation on the footer. */
+    }
+    .footer span{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 14px;
+        line-height: 100px;
+    }
 }
-.topHead .subTitle{
-    font-weight: lighter;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    height: 40px;
-    line-height: 40px;
-    color: white;
-}
-.menuBar{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    width: 100%;
-    height: 50px;
-    /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
-}
-.menuItems{
-    width: 100px;
-    height: 50px;
-    text-align: center;
-    float: left;
-    transition: 200ms;
-}
-.menuItems#menuItems_Right{
-    float: right;
-}
-.menuItems .menuUrls{
-    height: 50px;
-    line-height: 50px;
-    color: #757575;
-}
-.menuItems .menuUrls:active{
-    color: skyblue;
-    transition: 200ms;
-}
-.menuItems:hover{
-    transition: 200ms;
-    background-color: #f1f1f1;
+/* For wide screen device */
+@media screen and (min-width: 1000px) {
+    .topHead{
+        /* The stylesheet of the top. */
+        width: 100%;
+        height: 150px;
+        background-color: #407c94;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, .2); */
+        text-align: center;
+    }
+    .topHead h1{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        height: 100px;
+        line-height: 100px;
+        color: white;
+    }
+    .topHead .subTitle{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        color: white;
+    }
+    .menuBar{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        width: 100%;
+        height: 50px;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    }
+    .menuItems{
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        float: left;
+        transition: 200ms;
+    }
+    .menuItems#menuItems_Right{
+        float: right;
+    }
+    .menuItems .menuUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .menuItems .menuUrls:active{
+        color: skyblue;
+        transition: 200ms;
+    }
+    .menuItems:hover{
+        transition: 200ms;
+        background-color: #f1f1f1;
+    }
+    
+    .menuItems:hover .dropDown{
+        display: block;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDown{
+        transition: 200ms;
+        position: absolute;
+        display: none;
+    }
+    .dropDownUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .dropDownItems{
+        width: 100px;
+        height: 50px;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDownItems:hover{
+        background-color: #f1f1f1;
+        transition: 200ms;
+    }
+    .boxLine{
+        width: 980px;
+        height: 500px;
+        background-color: #f1f1f1;
+        margin: 10px auto;
+    }
+    .Aside{
+        width: 290px;
+        height: 500px;
+        margin-right: 10px;
+        background-color: white;
+        float: left;
+    }
+    .Profile{
+        width: 290px;
+        height: 200px;
+        margin: 10px auto;
+    }
+    .signButton{
+        width: 250px;
+        height: 35px;
+        line-height: 35px;
+        margin: 0px auto;
+        margin-top: 35px;
+        display: block;
+        outline: none;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        color: white;
+        background-color: #407c94;
+        text-align: center;
+        transition: 200ms;
+    }
+    .signButton:hover{
+        background-color: #c4c4c4;
+        color: black;
+        transition: 200ms;
+    }
+    .signButton:active{
+        background-color: #f1f1f1;
+        color: black;
+        transition: 200ms;
+    }
+    .Avatar{
+        background-color: #f1f1f1;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .Avatar img{
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+    }
+    
+    .Publish,.Likes{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        margin-right: 10px;
+        float: left;
+        text-align: center;
+    }
+    .Followers{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        float: left;
+        text-align: center;
+    }
+    .Publish:hover .Nums, .Publish:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Likes:hover .Nums, .Likes:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Followers:hover .Nums, .Followers:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Content{
+        width: 680px;
+        height: 500px;
+        background-color: white;
+        float: left;
+    }
+    .PicBar{
+        width: 980px;
+        height: 500px;
+        background-color: white;
+    }
+    .footer{
+        width: 100%;
+        height: 100px;
+        background-color: #407c94;
+        text-align: center;
+        /* Infomation on the footer. */
+    }
+    .footer span{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 14px;
+        line-height: 100px;
+    }
 }
 
-.menuItems:hover .dropDown{
-    display: block;
-    background-color: white;
-    transition: 200ms;
-}
-.dropDown{
-    transition: 200ms;
-    position: absolute;
-    display: none;
-}
-.dropDownUrls{
-    height: 50px;
-    line-height: 50px;
-    color: #757575;
-}
-.dropDownItems{
-    width: 100px;
-    height: 50px;
-    background-color: white;
-    transition: 200ms;
-}
-.dropDownItems:hover{
-    background-color: #f1f1f1;
-    transition: 200ms;
-}
-.boxLine{
-    width: 1280px;
-    height: 500px;
-    background-color: #f1f1f1;
-    margin: 10px auto;
-}
-.Aside{
-    width: 290px;
-    height: 500px;
-    margin-right: 10px;
-    background-color: white;
-    float: left;
-}
-.Profile{
-    width: 290px;
-    height: 200px;
-    margin: 10px auto;
-}
-.signButton{
-    width: 250px;
-    height: 35px;
-    line-height: 35px;
-    margin: 0px auto;
-    margin-top: 35px;
-    display: block;
-    outline: none;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    border: none;
-    color: white;
-    background-color: #407c94;
-    text-align: center;
-    transition: 200ms;
-}
-.signButton:hover{
-    background-color: #c4c4c4;
-    color: black;
-    transition: 200ms;
-}
-.signButton:active{
-    background-color: #f1f1f1;
-    color: black;
-    transition: 200ms;
-}
-.Avatar{
-    background-color: #f1f1f1;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    border-radius: 100%;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.Avatar img{
-    width: 100px;
-    height: 100px;
-    line-height: 100px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-}
-
-.Publish,.Likes{
-    width: 90px;
-    height: 50px;
-    /* border: solid 1px #757575; */
-    margin-right: 10px;
-    float: left;
-    text-align: center;
-}
-.Followers{
-    width: 90px;
-    height: 50px;
-    /* border: solid 1px #757575; */
-    float: left;
-    text-align: center;
-}
-.Publish:hover .Nums, .Publish:hover .textProfile{
-    color: #407c94;
-    transition: 500ms;
-}
-.Likes:hover .Nums, .Likes:hover .textProfile{
-    color: #407c94;
-    transition: 500ms;
-}
-.Followers:hover .Nums, .Followers:hover .textProfile{
-    color: #407c94;
-    transition: 500ms;
-}
-.Content{
-    width: 980px;
-    height: 500px;
-    background-color: white;
-    float: left;
-}
-.PicBar{
-    width: 1280px;
-    height: 500px;
-    background-color: white;
-}
-.footer{
-    width: 100%;
-    height: 100px;
-    background-color: #407c94;
-    text-align: center;
-    /* Infomation on the footer. */
-}
-.footer span{
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 14px;
-    line-height: 100px;
+@media screen and (min-width: 1300px) {
+    .topHead{
+        /* The stylesheet of the top. */
+        width: 100%;
+        height: 150px;
+        background-color: #407c94;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, .2); */
+        text-align: center;
+    }
+    .topHead h1{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        height: 100px;
+        line-height: 100px;
+        color: white;
+    }
+    .topHead .subTitle{
+        font-weight: lighter;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        height: 40px;
+        line-height: 40px;
+        color: white;
+    }
+    .menuBar{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        width: 100%;
+        height: 50px;
+        /* box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); */
+    }
+    .menuItems{
+        width: 100px;
+        height: 50px;
+        text-align: center;
+        float: left;
+        transition: 200ms;
+    }
+    .menuItems#menuItems_Right{
+        float: right;
+    }
+    .menuItems .menuUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .menuItems .menuUrls:active{
+        color: skyblue;
+        transition: 200ms;
+    }
+    .menuItems:hover{
+        transition: 200ms;
+        background-color: #f1f1f1;
+    }
+    
+    .menuItems:hover .dropDown{
+        display: block;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDown{
+        transition: 200ms;
+        position: absolute;
+        display: none;
+    }
+    .dropDownUrls{
+        height: 50px;
+        line-height: 50px;
+        color: #757575;
+    }
+    .dropDownItems{
+        width: 100px;
+        height: 50px;
+        background-color: white;
+        transition: 200ms;
+    }
+    .dropDownItems:hover{
+        background-color: #f1f1f1;
+        transition: 200ms;
+    }
+    .boxLine{
+        width: 1280px;
+        height: 500px;
+        background-color: #f1f1f1;
+        margin: 10px auto;
+    }
+    .Aside{
+        width: 290px;
+        height: 500px;
+        margin-right: 10px;
+        background-color: white;
+        float: left;
+    }
+    .Profile{
+        width: 290px;
+        height: 200px;
+        margin: 10px auto;
+    }
+    .signButton{
+        width: 250px;
+        height: 35px;
+        line-height: 35px;
+        margin: 0px auto;
+        margin-top: 35px;
+        display: block;
+        outline: none;
+        font-size: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        color: white;
+        background-color: #407c94;
+        text-align: center;
+        transition: 200ms;
+    }
+    .signButton:hover{
+        background-color: #c4c4c4;
+        color: black;
+        transition: 200ms;
+    }
+    .signButton:active{
+        background-color: #f1f1f1;
+        color: black;
+        transition: 200ms;
+    }
+    .Avatar{
+        background-color: #f1f1f1;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .Avatar img{
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+    }
+    
+    .Publish,.Likes{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        margin-right: 10px;
+        float: left;
+        text-align: center;
+    }
+    .Followers{
+        width: 90px;
+        height: 50px;
+        /* border: solid 1px #757575; */
+        float: left;
+        text-align: center;
+    }
+    .Publish:hover .Nums, .Publish:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Likes:hover .Nums, .Likes:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Followers:hover .Nums, .Followers:hover .textProfile{
+        color: #407c94;
+        transition: 500ms;
+    }
+    .Content{
+        width: 980px;
+        height: 500px;
+        background-color: white;
+        float: left;
+    }
+    .PicBar{
+        width: 1280px;
+        height: 500px;
+        background-color: white;
+    }
+    .footer{
+        width: 100%;
+        height: 100px;
+        background-color: #407c94;
+        text-align: center;
+        /* Infomation on the footer. */
+    }
+    .footer span{
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 14px;
+        line-height: 100px;
+    }
 }
