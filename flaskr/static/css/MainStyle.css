@@ -151,7 +151,7 @@ body{
     .Avatar{
         background-color: #f1f1f1;
         width: 100px;
-        height: 100px;
+        height: 150px;
         margin: 0 auto;
         border-radius: 100%;
         text-align: center;
@@ -312,7 +312,7 @@ body{
     }
     .Profile{
         width: 290px;
-        height: 200px;
+        height: 230px;
         margin: 10px auto;
     }
     .signButton{
@@ -344,7 +344,7 @@ body{
     .Avatar{
         background-color: #f1f1f1;
         width: 100px;
-        height: 100px;
+        height: 150px;
         margin: 0 auto;
         border-radius: 100%;
         text-align: center;
@@ -506,7 +506,7 @@ body{
     }
     .Profile{
         width: 290px;
-        height: 200px;
+        height: 230px;
         margin: 10px auto;
     }
     .signButton{
@@ -538,7 +538,7 @@ body{
     .Avatar{
         background-color: #f1f1f1;
         width: 100px;
-        height: 100px;
+        height: 150px;
         margin: 0 auto;
         border-radius: 100%;
         text-align: center;
@@ -701,7 +701,7 @@ body{
     }
     .Profile{
         width: 290px;
-        height: 200px;
+        height: 230px;
         margin: 10px auto;
     }
     .signButton{

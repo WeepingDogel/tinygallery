@@ -55,3 +55,9 @@ Description: This is the Stylesheet of the Fonts.
     transition: 500ms;
     font-size: 64px;
 }
+.username{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+}

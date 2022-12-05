@@ -40,5 +40,7 @@ function SignIn(){
     }else if(password == "" | password == null){
         alert("密码不得为空！");
         return false;
+    }else{
+        window.location.replace("/index");
     }
 }
