@@ -119,7 +119,7 @@ body{
     }
     .Profile{
         width: 290px;
-        height: 200px;
+        height: 300px;
         margin: 10px auto;
     }
     .signButton{
@@ -151,7 +151,7 @@ body{
     .Avatar{
         background-color: #f1f1f1;
         width: 100px;
-        height: 150px;
+        height: 100px;
         margin: 0 auto;
         border-radius: 100%;
         text-align: center;
@@ -197,10 +197,34 @@ body{
         height: 500px;
         background-color: white;
     }
+    .columns{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: white;
+        text-align: center;
+    }
+    .columns p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: lighter;
+        line-height: 35px;
+
+    }
+    .displayImages{
+        background-color: white;
+        width: 100%;
+        height: auto;
+        outline: none;
+        border: none;
+        margin: 0 auto;
+        display: block;
+    }
     .PicBar{
         width: 100%;
-        height: 500px;
-        background-color: white;
+        height: auto;
+        background-color: #f1f1f1;
     }
     .footer{
         width: 100%;
@@ -312,7 +336,7 @@ body{
     }
     .Profile{
         width: 290px;
-        height: 230px;
+        height: 300px;
         margin: 10px auto;
     }
     .signButton{
@@ -344,7 +368,7 @@ body{
     .Avatar{
         background-color: #f1f1f1;
         width: 100px;
-        height: 150px;
+        height: 100px;
         margin: 0 auto;
         border-radius: 100%;
         text-align: center;
@@ -390,10 +414,34 @@ body{
         height: 500px;
         background-color: white;
     }
+    .columns{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: white;
+        text-align: center;
+    }
+    .columns p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: lighter;
+        line-height: 35px;
+
+    }
+    .displayImages{
+        background-color: white;
+        width: 100%;
+        height: auto;
+        outline: none;
+        border: none;
+        margin: 0 auto;
+        display: block;
+    }
     .PicBar{
         width: 100%;
-        height: 500px;
-        background-color: white;
+        height: auto;
+        background-color: #f1f1f1;
     }
     .footer{
         width: 100%;
@@ -506,7 +554,7 @@ body{
     }
     .Profile{
         width: 290px;
-        height: 230px;
+        height: 300px;
         margin: 10px auto;
     }
     .signButton{
@@ -538,7 +586,7 @@ body{
     .Avatar{
         background-color: #f1f1f1;
         width: 100px;
-        height: 150px;
+        height: 100px;
         margin: 0 auto;
         border-radius: 100%;
         text-align: center;
@@ -585,10 +633,39 @@ body{
         background-color: white;
         float: left;
     }
+    .columns{
+        width: 320px;
+        height: 500px;
+        margin-right: 10px;
+        margin-top: 0px;
+        float: left;
+        background-color: white;
+        text-align: center;
+    }
+    .columns p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: lighter;
+        line-height: 35px;
+
+    }
+    .columns#right{
+        margin-right: 0px;
+    }
+    .displayImages{
+        background-color: white;
+        width: 320px;
+        height: auto;
+        outline: none;
+        border: none;
+        margin: 0 auto;
+        display: block;
+    }
     .PicBar{
         width: 980px;
-        height: 500px;
-        background-color: white;
+        height: auto;
+        background-color: #f1f1f1;
+        clear: both;
     }
     .footer{
         width: 100%;
@@ -691,6 +768,7 @@ body{
         height: 500px;
         background-color: #f1f1f1;
         margin: 10px auto;
+        clear: both;
     }
     .Aside{
         width: 290px;
@@ -734,7 +812,7 @@ body{
         background-color: #f1f1f1;
         width: 100px;
         height: 100px;
-        margin: 0 auto;
+        margin: 10px auto;
         border-radius: 100%;
         text-align: center;
         margin-bottom: 10px;
@@ -780,10 +858,39 @@ body{
         background-color: white;
         float: left;
     }
+    .columns{
+        width: 420px;
+        height: 500px;
+        margin-right: 10px;
+        margin-top: 0px;
+        float: left;
+        background-color: white;
+        text-align: center;
+    }
+    .columns p{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        font-weight: lighter;
+        line-height: 35px;
+        margin-top: 5px;
+    }
+    .columns#right{
+        margin-right: 0px;
+    }
+    .displayImages{
+        background-color: white;
+        width: 420px;
+        height: auto;
+        outline: none;
+        border: none;
+        margin: 0 auto;
+        display: block;
+    }
     .PicBar{
         width: 1280px;
-        height: 500px;
-        background-color: white;
+        height: auto;
+        background-color: #f1f1f1;
+        clear: both;
     }
     .footer{
         width: 100%;

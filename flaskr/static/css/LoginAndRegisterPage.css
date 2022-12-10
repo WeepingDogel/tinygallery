@@ -152,7 +152,7 @@ body{
     }
     .formInput{
         display: block;
-        width: 100%;
+        width: 80%;
         height: 35px;
         margin: 15px auto;
         outline: none;
@@ -182,7 +182,7 @@ body{
         border: none;
         background-color: #407c94;
         color: white;
-        width: 90%;
+        width: 80%;
         height: 35px;
         font-size: 18px;
         transition: 500ms;
@@ -198,7 +198,7 @@ body{
     }
     .selectButton{
         transition: 500ms;
-        width: 90%;
+        width: 80%;
         height: 35px;
         font-size: 18px;
         margin: 5px auto;

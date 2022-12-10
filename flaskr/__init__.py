@@ -21,9 +21,9 @@ app.secret_key = b'905bd5453270081b623caf48b2c59159b25121018a1bddeda190f9c4fa77e
 @app.route("/index")
 def index():
     if 'username' in session:
-        return render_template("index.html", username = session['username'], var="none")
+        return render_template("index.html", username = session['username'], logIn="none", logOut = "block", IMG1 = "static/images/testImages/wallhaven-x8y91d.jpg", IMG2 = "static/images/testImages/20220710.PNG", IMG3 = "static/images/testImages/Capture3.PNG")
     else:
-        return render_template("index.html")
+        return render_template("index.html", username = "Please Sign In", logIn = "block", logOut = "none", IMG1 = "static/images/testImages/wallhaven-x8y91d.jpg", IMG2 = "static/images/testImages/20220710.PNG", IMG3 = "static/images/testImages/Capture3.PNG")
 @app.route("/login_and_register")
 def login_and_register():
     return render_template("auth/login_and_register.html")
@@ -67,12 +67,16 @@ VALUES("$username", "$password", "$email", "$date");
             cur.execute(addUser.substitute(username=userName, password=passWord, email=Email, date=date))
             database.commit()
             database.close()
-            return "注册成功!"
+            return render_template("auth/login_and_register.html")
         else:
             return "两次输入的密码不一致！"
-            pass
-    return render_template("auth/login_and_register.html")
 
 @app.route("/Pics")
 def Pics():
     return render_template("pics.html")
+
+@app.route('/logout')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('index'))

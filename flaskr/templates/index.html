@@ -66,16 +66,33 @@
                         <span class="textProfile">Followers</span>
                     </div>
                 </div>
-                    <a style="display: {{ var }};" class="signButton" href="/login_and_register">Sign Up or Sign In</a>
+                    <a style="display: {{ logIn }};" class="signButton" href="/login_and_register">Sign Up or Sign In</a>
+                    <a style="display: {{ logOut }};" class="signButton" href="/logout">Log Out</a>
             </div>
             <div class="Content">
                 <h1 class="centerTitle">DashBoard</h1>
-                
             </div>
         </div>
         <div class="boxLine">
             <div class="PicBar">
-
+                <div class="columns">
+                    <img class="displayImages" src="{{ IMG1 }}" />
+                    <p>Author: Test</p>
+                    <p>Date: 2022-12-11 </p>
+                    <p>Likes: 0</p>
+                </div>
+                <div class="columns">
+                    <img class="displayImages" src="{{ IMG2 }}" />
+                    <p>Author: Test </p>
+                    <p>Date: 2022-12-11 </p>
+                    <p>Likes: 0</p>
+                </div>
+                <div class="columns" id="right">
+                    <img class="displayImages" src="{{ IMG3 }}" />
+                    <p>Author: Test </p>
+                    <p>Date: 2022-12-11 </p>
+                    <p>Likes: 0</p>
+                </div>
             </div>
         </div>
         <div class="footer">
