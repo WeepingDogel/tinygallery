@@ -13,7 +13,7 @@
         <div class="Head">
             <p class="AuthTitle">Login</p>
         </div>
-        <form id="loginForm" name="loginForm" class="loginForm" onsubmit="return loginAuthCheck();" >
+        <form action="/auth/login" id="loginForm" name="loginForm" class="loginForm" onsubmit="return loginAuthCheck();" method="post">
             <input name="username" class="textInput" type="text" placeholder="Username"/>
             <input name="password" class="textInput" type="password" placeholder="Password" />
             <input class="loginButton" type="submit" value="Sign In"/>
@@ -25,7 +25,7 @@
         <div class="Head">
             <p class="AuthTitle">Register</p>
         </div>
-        <form id="registerForm" name="registerForm" class="loginForm" onsubmit="return registerAuthCheck();" >
+        <form action="/auth/register" id="registerForm" name="registerForm" class="loginForm" onsubmit="return registerAuthCheck();" method="post" >
             <input name="username" class="textInput" type="text" placeholder="Username"/>
             <input name="password" class="textInput" type="password" placeholder="Password"/>
             <input name="repeat_password" class="textInput" type="password" placeholder="Repeat Password"/>
