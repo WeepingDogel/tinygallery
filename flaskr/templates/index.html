@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="static/css/MainStyle.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/Fonts.css" />
+    <title>{{ PageTitle }} | TinyGallery</title>
+</head>
+<body>
+    <div class="TopBar">
+        <h1 class="titleLine"> T i n y G a l l e r y 1.0 </h1>
+        <div class="menuButton">
+            <p class="userNameTag">{{ userName }}</p>
+            <div class="ProfileBar">
+                <div class="avatar">
+                    <img class="avatarIMG" src="{{ userAvaterImage }}" />
+                </div>
+                <p class="userName">{{ userName }}</p>
+                <a href="/login_and_register" style="display: {{ logIN_Display }};" class="loginButton" type="button" >Sign In </a>
+                <a href="/logout" style="display: {{ logOUT_Display }};" class="logoutButton" type="button" >  Sign Out </a>
+            </div>
+        </div>
+    </div>
+    <div class="Content">
+        
+    </div>
+</body>
+</html>

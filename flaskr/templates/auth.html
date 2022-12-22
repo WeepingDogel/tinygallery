@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="static/css/Auth.css"/>
+    <link type="text/css" rel="stylesheet" href="static/css/Fonts.css">
+    <title> {{ PageTitle }} | TinyGallery </title>
+</head>
+<body>
+    <div id="panelLogin" class="panelLogin">
+        <div class="Head">
+            <p class="AuthTitle">Login</p>
+        </div>
+        <form id="loginForm" name="loginForm" class="loginForm" onsubmit="return loginAuthCheck();" >
+            <input name="username" class="textInput" type="text" placeholder="Username"/>
+            <input name="password" class="textInput" type="password" placeholder="Password" />
+            <input class="loginButton" type="submit" value="Sign In"/>
+            <p class="textFont">No Accounts? <a class="urlAuth" onclick="SelectToRegister();" href="#">Sign Up!</a></p>
+        </form>
+        <p class="backMessage" id="loginBackMessage" style="display: none;"></p>
+    </div>
+    <div id="panelRegister" class="panelRegister">
+        <div class="Head">
+            <p class="AuthTitle">Register</p>
+        </div>
+        <form id="registerForm" name="registerForm" class="loginForm" onsubmit="return registerAuthCheck();" >
+            <input name="username" class="textInput" type="text" placeholder="Username"/>
+            <input name="password" class="textInput" type="password" placeholder="Password"/>
+            <input name="repeat_password" class="textInput" type="password" placeholder="Repeat Password"/>
+            <input name="email" class="textInput" type="email" placeholder="Email"/>
+            <input class="loginButton" type="submit" value="Sign Up"/>
+            <p class="textFont">Have an account already? <a class="urlAuth" onclick="SelectToLogin();" href="#">Sign In!</a></p>
+        </form>
+        <p class="backMessage" id="registerBackMessage" style="display: none;"></p>
+    </div>
+    <script src="static/js/Main.js"></script>
+</body>
+</html>

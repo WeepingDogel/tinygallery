@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'buonumorebolditalic';
+    src: url("../fonts/buonumorebolditalic-3zzjz.ttf");
+}
+
+.titleLine{
+    width: 400px;
+    font-family: 'buonumorebolditalic';
+    font-size: 36px;
+    /* font-weight: lighter; */
+    color: black;
+    float: left;
+    line-height: 80px;
+    text-indent: 2em;
+}
+.userName{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+}
+.userNameTag{
+    font-family: 'buonumorebolditalic';
+    font-size: 36px;
+    line-height: 80px;
+    color: black;
+}
+.AuthTitle{
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+.textFont{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
+    text-align: center;
+    color: #757575;
+}
+.urlAuth{
+    font-size: 14px;
+    color: skyblue;
+    transition: 1s;
+}
+.urlAuth:active{
+    transition: 100ms;
+    color: pink;
+}
+.backMessage{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: hotpink;
+}
