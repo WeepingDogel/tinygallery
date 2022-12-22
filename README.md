@@ -9,29 +9,28 @@ It is an open-source and free project, which is faced with the drawing lovers, p
 ```
 .
 ├── flaskr
-│   ├── database.db
+│   ├── auth.py
+│   ├── createDATA.sql
 │   ├── db.py
 │   ├── __init__.py
 │   ├── static
 │   │   ├── avatars
+│   │   │   └── test.jpg
 │   │   ├── css
-│   │   │   ├── FontOfWords.css
-│   │   │   ├── LoginAndRegisterPage.css
+│   │   │   ├── Auth.css
+│   │   │   ├── Fonts.css
 │   │   │   └── MainStyle.css
-│   │   ├── images
+│   │   ├── fonts
+│   │   │   └── buonumorebolditalic-3zzjz.ttf
 │   │   └── js
 │   │       └── Main.js
 │   └── templates
-│       ├── auth
-│       │   └── login_and_register.html
+│       ├── auth.html
 │       └── index.html
 ├── README.md
-├── setup.py
-└── tests
-    ├── test_auth.py
-    └── test_db.py
+└── setup.py
 
-9 directories, 13 files
+7 directories, 14 files
 ```
 # Dependencies
 
