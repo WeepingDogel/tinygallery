@@ -11,7 +11,7 @@ from flask import *
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY = 'dev',
+        SECRET_KEY = '600c84ec0e84b99d468eafa2fdd52e1b659c9fa5e23a0ec91bab6b7e94272da8',
         DATABASE = os.path.join(app.instance_path, 'database.sqlite')
     )
     
@@ -26,7 +26,10 @@ def create_app(test_config=None):
     
     @app.route("/")
     def index():
-        return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName="Please Log In", logIN_Display="block" ,logOUT_Display="none")
+        if 'username' in session:
+            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName=session['username'], logIN_Display="none" ,logOUT_Display="display")
+        else:    
+            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName="Please Log In", logIN_Display="block" ,logOUT_Display="none")
     
     @app.route("/login_and_register")
     def LoginPage():

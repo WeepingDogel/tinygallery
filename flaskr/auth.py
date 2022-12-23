@@ -8,8 +8,9 @@ from flask import(
     g, 
     redirect, 
     render_template, 
-    request, session, 
-    url_for,
+    request, 
+    session, 
+    url_for
     )
 
 bp = Blueprint('auth', __name__, url_prefix = '/auth')
@@ -29,16 +30,31 @@ def register():
             try:
                 db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",(userName, passWord, Email, Date))
                 db.commit()
-                return redirect("/login_and_register")
+                return redirect(url_for('LoginPage'))
             except db.IntegrityError:
                 return "User has already existed. <a href='/login_and_register'>Back</a>"
         else:
             return "Passwords are different. <a href='/login_and_register'>Back</a>"
 
-    # return "Passwords are different. <a href='/login_and_register'>Back</a>"
-    # return redirect("/login_and_register")
-
-@bp.route("/login")
+@bp.route("/login", methods=('GET', 'POST'))
 def login():
-
-    return "Login"
+    if request.method == 'POST':
+        userName = request.form['username']
+        passWord = request.form['password']
+        db = get_db()
+        users = db.execute(
+            'SELECT * FROM USERS WHERE UserName = ?',(userName,)
+        ).fetchone()
+        if users is None:
+            return "User doesn't exist. <a href='/login_and_register'>Back</a>"
+        elif passWord != users['PassWord']:
+            return "Incorrect password. <a href='/login_and_register'>Back</a>"
+        else:
+            session.clear()
+            session['username'] = userName
+            return redirect(url_for('index'))
+        
+@bp.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
