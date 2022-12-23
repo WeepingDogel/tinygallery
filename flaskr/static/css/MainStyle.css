@@ -59,6 +59,116 @@ body{
     .Content{
         height: auto;
         max-width: 80%;
+        min-height: 1000px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    .menuButton{
+        width: 300px;
+        height: 80px;
+        text-align: center;
+        display: block;
+        background-color: white;
+        margin-right: 20px;
+        float: right;
+        transition: 500ms;
+    }
+    .menuButton:hover{
+        background-color: #f5f5f5;
+        transition: 500ms;
+    }
+    .menuButton:hover .ProfileBar{
+        display: block;
+    }
+    .loginButton{
+        width: 280px;
+        height: 40px;
+        line-height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+        outline: none;
+        border: 0;
+        color: black;
+        display: block;
+    }
+    .loginButton:hover{
+        background-color: #f1f1f1;
+    }
+    .loginButton:active{
+        background-color: #c4c4c4;
+    }
+    .logoutButton{
+        width: 280px;
+        height: 40px;
+        line-height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin: 10px auto;
+        background-color: #f5f5f5;
+        outline: none;
+        border: 0;
+        color: black;
+        display: block;
+    }
+    .logoutButton:hover{
+        background-color: #f1f1f1;
+    }
+    .logoutButton:active{
+        background-color: #c4c4c4;
+    }
+}
+
+@media screen and (max-width:1280px) {
+    .TopBar{
+        width: 100%;
+        height: 80px;
+        background-color: white;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    .ProfileBar{
+        position: absolute;
+        width: 300px;
+        height: 600px;
+        display: none;
+        background-color: white;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        float: right;
+    }
+    .avatar{
+        width: 224px;
+        height: 224px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: white;
+        border-radius: 100%;
+        transition: 500ms;
+    }
+    .avatar img{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 100%;
+        text-align: center;
+        transition: 500ms;
+    }
+    .avatar:hover{
+        width: 280px;
+        height: 280px;
+        transition: 500ms;
+    }
+    .Content{
+        height: auto;
+        max-width: 90%;
         min-height: 650px;
         margin: 0 auto;
         margin-top: 20px;
@@ -74,6 +184,115 @@ body{
         background-color: white;
         margin-right: 20px;
         float: right;
+        transition: 500ms;
+    }
+    .menuButton:hover{
+        background-color: #f5f5f5;
+        transition: 500ms;
+    }
+    .menuButton:hover .ProfileBar{
+        display: block;
+    }
+    .loginButton{
+        width: 280px;
+        height: 40px;
+        line-height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin: 0 auto;
+        background-color: #f5f5f5;
+        outline: none;
+        border: 0;
+        color: black;
+        display: block;
+    }
+    .loginButton:hover{
+        background-color: #f1f1f1;
+    }
+    .loginButton:active{
+        background-color: #c4c4c4;
+    }
+    .logoutButton{
+        width: 280px;
+        height: 40px;
+        line-height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin: 10px auto;
+        background-color: #f5f5f5;
+        outline: none;
+        border: 0;
+        color: black;
+        display: block;
+    }
+    .logoutButton:hover{
+        background-color: #f1f1f1;
+    }
+    .logoutButton:active{
+        background-color: #c4c4c4;
+    }
+}
+
+@media screen and (max-width:810px) {
+    .TopBar{
+        width: 100%;
+        height: 180px;
+        background-color: white;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
+    .ProfileBar{
+        position: absolute;
+        width: 100%;
+        height: 600px;
+        display: none;
+        background-color: white;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .avatar{
+        width: 224px;
+        height: 224px;
+        margin: 0 auto;
+        margin-top: 10px;
+        background-color: white;
+        border-radius: 100%;
+        transition: 500ms;
+    }
+    .avatar img{
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 100%;
+        text-align: center;
+        transition: 500ms;
+    }
+    .avatar:hover{
+        width: 280px;
+        height: 280px;
+        transition: 500ms;
+    }
+    .Content{
+        height: auto;
+        max-width: 100%;
+        min-height: 650px;
+        margin: 0 auto;
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: white;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    .menuButton{
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        display: block;
+        background-color: white;
+        margin-right: 20px;
+        float: none;
         transition: 500ms;
     }
     .menuButton:hover{
