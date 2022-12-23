@@ -27,9 +27,9 @@ def create_app(test_config=None):
     @app.route("/")
     def index():
         if 'username' in session:
-            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName=session['username'], logIN_Display="none" ,logOUT_Display="display")
+            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName=session['username'], logIN_Display="none" ,logOUT_Display="block", profileDisplay="block")
         else:    
-            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName="Please Log In", logIN_Display="block" ,logOUT_Display="none")
+            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/avatars/test.jpg", userName="Please Log In", logIN_Display="block" ,logOUT_Display="none", profileDisplay="none")
     
     @app.route("/login_and_register")
     def LoginPage():
