@@ -83,6 +83,36 @@ body{
     .menuButton:hover .ProfileBar{
         display: block;
     }
+    .ProfileBackGroundIamge{
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        margin: 0 auto;
+    }
+    .ProfileBackGroundIamge img{
+        width: 100%;
+        height: 300px;
+    }
+    .InfoPanel{
+        width: 80%;
+        height: 500px;
+        background-color: white;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .InfoPanel img{
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        display: inline-block;
+    }
+    .Published{
+        width: 80%;
+        height: auto;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
     .loginButton{
         width: 280px;
         height: 40px;
@@ -193,6 +223,36 @@ body{
     .menuButton:hover .ProfileBar{
         display: block;
     }
+    .ProfileBackGroundIamge{
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        margin: 0 auto;
+    }
+    .ProfileBackGroundIamge img{
+        width: 100%;
+        height: 300px;
+    }
+    .InfoPanel{
+        width: 80%;
+        height: 500px;
+        background-color: white;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .InfoPanel img{
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        display: inline-block;
+    }
+    .Published{
+        width: 80%;
+        height: auto;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
     .loginButton{
         width: 280px;
         height: 40px;
@@ -301,6 +361,36 @@ body{
     }
     .menuButton:hover .ProfileBar{
         display: block;
+    }
+    .ProfileBackGroundIamge{
+        width: 100%;
+        height: 300px;
+        background-color: white;
+        margin: 0 auto;
+    }
+    .ProfileBackGroundIamge img{
+        width: 100%;
+        height: 300px;
+    }
+    .InfoPanel{
+        width: 100%;
+        height: 500px;
+        background-color: white;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .InfoPanel img{
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        display: inline-block;
+    }
+    .Published{
+        width: 100%;
+        height: auto;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 15px;
     }
     .loginButton{
         width: 280px;

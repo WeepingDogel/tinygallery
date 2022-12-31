@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="static/css/MainStyle.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/Fonts.css" />
+    <title>Profile | {{ userName }}</title>
+</head>
+<body>
+    <div class="ProfileBackGroundIamge">
+        <img src="{{ BG_Link }}" alt="NO IMAGE" class="BackgroudPic" />
+    </div>
+    <div class="InfoPanel">
+        <img src="{{ AvatarLink }}" alt="NO AVATAR" class="profileAvatar">
+        <h1 class="userName">{{ userName }}</h1>
+        <form action="/auth/avatar" method="POST" enctype="multipart/form-data">
+            <input class="logoutButton" name="file" type="file" />
+            <input class="logoutButton" type="submit" value="Edit" />
+        </form>
+        <a class="logoutButton" href="/">Home</a>
+    </div>
+    <div class="Published">
+        <div class="work">
+            <img src="{{ WorkLink }}" />
+            <p class="textFont">
+                <span>By {{ author }}</span>
+                <br/>
+                <span>Likes: {{ dots }}</span>
+                <br />
+                <span>Description: {{ Description }}</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

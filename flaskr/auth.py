@@ -1,7 +1,6 @@
 # Authorization
 
-import functools
-import time
+import functools,time,os
 from flaskr.db import get_db
 from flask import(
     Blueprint, 
@@ -10,7 +9,8 @@ from flask import(
     render_template, 
     request, 
     session, 
-    url_for
+    url_for,
+    current_app
     )
 
 bp = Blueprint('auth', __name__, url_prefix = '/auth')
@@ -30,6 +30,8 @@ def register():
             try:
                 db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",(userName, passWord, Email, Date))
                 db.commit()
+                os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName)
+                os.system("cp flaskr/static/img/default_avatar.jpg " + current_app.config['USERFILE_DIR'] + "/" + userName + "/avatar.jpg")
                 return redirect(url_for('LoginPage'))
             except db.IntegrityError:
                 return "User has already existed. <a href='/login_and_register'>Back</a>"
@@ -58,3 +60,11 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+@bp.route("/avatar", methods=('POST','GET'))
+def avatar():
+    if request.method == "POST":
+        f = request.files['file']
+        f.save(os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/avatar.jpg"))
+
+        return redirect(url_for('profile'))

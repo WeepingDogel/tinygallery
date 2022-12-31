@@ -2,7 +2,7 @@
 # Read and Write the DATABASE
 
 import sqlite3
-import click
+import click,os
 from flask import current_app, g
 
 def get_db():
@@ -26,6 +26,7 @@ def init_db():
 
     with current_app.open_resource('createDATA.sql') as f:
         db.executescript(f.read().decode('utf-8'))
+        os.system("rm -rf " + current_app.config['USERFILE_DIR'])
 
 @click.command('init-db')
 def init_db_command():
