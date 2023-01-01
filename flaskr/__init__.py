@@ -43,7 +43,7 @@ def create_app(test_config=None):
     @app.route("/profile")
     def profile():
         if 'username' in session:
-            return render_template("profile.html", userName=session['username'], AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg")
+            return render_template("profile.html", userName=session['username'], AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", BG_Link="static/img/defaultBG.jpg")
         else:
             return render_template("profile.html", userName="Undefined")
 

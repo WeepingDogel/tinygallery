@@ -65,6 +65,9 @@ def logout():
 def avatar():
     if request.method == "POST":
         f = request.files['file']
-        f.save(os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/avatar.jpg"))
+        if f.filename == '':
+            return redirect(url_for('profile'))
+        else:
+            f.save(os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/avatar.jpg"))
 
         return redirect(url_for('profile'))
