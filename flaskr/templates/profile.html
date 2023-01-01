@@ -9,13 +9,13 @@
     <title>Profile | {{ userName }}</title>
 </head>
 <body>
-    <div class="ProfileBackGroundIamge">
-        <img src="{{ BG_Link }}" alt="NO IMAGE" class="BackgroudPic" />
+    <div class="TopBar">
+        <h1 class="titleLine">Profile Info</h1>
     </div>
     <div class="InfoPanel">
         <img src="{{ AvatarLink }}" alt="NO AVATAR" class="profileAvatar">
         <h1 class="userName">{{ userName }}</h1>
-        <form action="/auth/avatar" method="POST" enctype="multipart/form-data">
+        <form name="avatarChanging" action="/auth/avatar" method="POST" enctype="multipart/form-data" onsubmit="return avatarChecking();">
             <input class="logoutButton" name="file" type="file" />
             <input class="logoutButton" type="submit" value="Edit" />
         </form>
@@ -33,5 +33,6 @@
             </p>
         </div>
     </div>
+    <script type="text/javascript" src="static/js/Main.js"></script>
 </body>
 </html>
