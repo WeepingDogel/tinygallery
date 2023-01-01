@@ -51,3 +51,10 @@ function registerAuthCheck(){
         return false;
     }
 }
+function avatarChecking(){
+    var form = document.forms['avatarChanging'];
+    if(form['file'].value == ""){
+        alert("Empty File are not allowed to update.");
+        return false;
+    }
+}
