@@ -14,6 +14,7 @@ from flask import(
     )
 
 bp = Blueprint('auth', __name__, url_prefix = '/auth')
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 @bp.route("/register", methods=('GET', 'POST'))
 def register():
@@ -70,5 +71,29 @@ def avatar():
             return redirect(url_for('profile'))
         else:
             f.save(os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/avatar.jpg"))
+            return redirect(url_for('profile'))
 
-        return redirect(url_for('profile'))
+@bp.route("/upload", methods=('POST','GET'))
+def upload():
+    
+    def allowed_file(filename):
+        return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    if request.method == "POST":
+        UPLOAD_LOCALTION = os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/Images")
+        db = get_db()
+        f = request.files['Picture']
+        if f.filename == '':
+            return "Empty file is not allowed to submit <a href='/'>Back</a>"
+        elif allowed_file(f.filename):
+            FileName = current_app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/Images" + "/" + f.filename
+            ImageTitle = request.form['Title']
+            Description = request.form['Description']
+            User = session['username']
+            Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+            db.execute("INSERT INTO IMAGES(FileName, ImageTitle, Description, User, Date) VALUES(?, ?, ?, ?, ?)",(FileName, ImageTitle, Description, User, Date))
+            db.commit()
+            f.save(UPLOAD_LOCALTION + "/" + f.filename)
+            return redirect(url_for('index'))
+        else:
+            return "Invalid Filename " + f.filename + " <a href='/'>Back</a>"
