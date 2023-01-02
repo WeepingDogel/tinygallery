@@ -31,6 +31,7 @@ def register():
                 db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",(userName, passWord, Email, Date))
                 db.commit()
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName)
+                os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images")
                 os.system("cp flaskr/static/img/default_avatar.jpg " + current_app.config['USERFILE_DIR'] + "/" + userName + "/avatar.jpg")
                 return redirect(url_for('LoginPage'))
             except db.IntegrityError:
