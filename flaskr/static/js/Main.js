@@ -66,3 +66,6 @@ function displayUploader(){
         uploader.style.display = "block";
     }
 }
+function uploaderChecking(){
+    // Frontend checking.
+}
