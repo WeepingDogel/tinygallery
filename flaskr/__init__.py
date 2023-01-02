@@ -31,10 +31,32 @@ def create_app(test_config=None):
 
     @app.route("/")
     def index():
+        database = db.get_db()
+        ImageTable = database.execute("SELECT * FROM IMAGES")
         if 'username' in session:
-            return render_template("index.html", PageTitle="HomePage", userAvaterImage=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", userName=session['username'], logIN_Display="none" ,logOUT_Display="block", profileDisplay="block", upload="block", favorites="block")
+            return render_template(
+            "index.html", 
+            PageTitle="HomePage", 
+            userAvaterImage=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", 
+            userName=session['username'], 
+            logIN_Display="none",
+            logOUT_Display="block", 
+            profileDisplay="block", 
+            upload="block", 
+            favorites="block",
+            Images=ImageTable)
         else:    
-            return render_template("index.html", PageTitle="HomePage", userAvaterImage="static/img/default_avatar.jpg", userName="Please Log In", logIN_Display="block" ,logOUT_Display="none", profileDisplay="none", upload="none", favorites="none")
+            return render_template(
+            "index.html", 
+            PageTitle="HomePage", 
+            userAvaterImage="static/img/default_avatar.jpg",
+            userName="Please Log In", 
+            logIN_Display="block",
+            logOUT_Display="none",
+            profileDisplay="none",
+            upload="none",
+            favorites="none",
+            Images=ImageTable)
     
     @app.route("/login_and_register")
     def LoginPage():
