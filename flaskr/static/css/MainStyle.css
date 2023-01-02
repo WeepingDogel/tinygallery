@@ -55,7 +55,7 @@ body{
     .Content{
         height: auto;
         max-width: 80%;
-        min-height: 1000px;
+        min-height: 500px;
         margin: 0 auto;
         margin-top: 20px;
         background-color: white;
@@ -137,6 +137,48 @@ body{
     }
     .logoutButton:active{
         background-color: #c4c4c4;
+    }
+    #mask{
+        top: 0;
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100vh;
+    }
+    .Uploader{
+        width: 400px;
+        height: 400px;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 10%;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    .Uploader h1{
+        line-height: 60px;
+    }
+    .SingleTextLine{
+        display: block;
+        width: 280px;
+        height: 40px;
+        margin: 0 auto;
+        margin-top: 20px;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    .MultiText{
+        display: block;
+        width: 280px;
+        height: 80px;
+        margin: 10px auto;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
     }
 }
 
@@ -182,7 +224,7 @@ body{
     .Content{
         height: auto;
         max-width: 90%;
-        min-height: 650px;
+        min-height: 500px;
         margin: 0 auto;
         margin-top: 20px;
         background-color: white;
@@ -265,6 +307,48 @@ body{
     .logoutButton:active{
         background-color: #c4c4c4;
     }
+    #mask{
+        top: 0;
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100vh;
+    }
+    .Uploader{
+        width: 400px;
+        height: 400px;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 10%;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    .Uploader h1{
+        line-height: 60px;
+    }
+    .SingleTextLine{
+        display: block;
+        width: 280px;
+        height: 40px;
+        margin: 0 auto;
+        margin-top: 20px;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    .MultiText{
+        display: block;
+        width: 280px;
+        height: 80px;
+        margin: 10px auto;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
 }
 
 @media screen and (max-width:810px) {
@@ -308,7 +392,7 @@ body{
     .Content{
         height: auto;
         max-width: 100%;
-        min-height: 650px;
+        min-height: 500px;
         margin: 0 auto;
         margin-top: 20px;
         background-color: white;
@@ -354,7 +438,7 @@ body{
         margin-top: 15px;
     }
     .loginButton{
-        width: 280px;
+        width: 80%;
         height: 40px;
         line-height: 40px;
         font-family: Arial, Helvetica, sans-serif;
@@ -373,7 +457,7 @@ body{
         background-color: #c4c4c4;
     }
     .logoutButton{
-        width: 280px;
+        width: 80%;
         height: 40px;
         line-height: 40px;
         font-family: Arial, Helvetica, sans-serif;
@@ -390,5 +474,45 @@ body{
     }
     .logoutButton:active{
         background-color: #c4c4c4;
+    }#mask{
+        top: 0;
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100vh;
+    }
+    .Uploader{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        margin: 0 auto;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    }
+    .Uploader h1{
+        line-height: 60px;
+    }
+    .SingleTextLine{
+        display: block;
+        width: 90%;
+        height: 40px;
+        margin: 0 auto;
+        margin-top: 20px;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+    }
+    .MultiText{
+        display: block;
+        width: 90%;
+        height: 80px;
+        margin: 10px auto;
+        outline: none;
+        border: none;
+        border-bottom: solid 2px black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
     }
 }
