@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="static/css/MainStyle.css" />
     <link type="text/css" rel="stylesheet" href="static/css/Fonts.css" />
+    <script src="static/js/Main.js" type="text/javascript"></script>
     <title>{{ PageTitle }} | TinyGallery</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
                 <p class="userName">{{ userName }}</p>
                 <a href="/login_and_register" style="display: {{ logIN_Display }};" class="loginButton" type="button" > Sign In </a>
                 <a href="/profile" style="display: {{ profileDisplay }};" class="logoutButton"> Profile </a>
-                <a href="/upload" style="display: {{ upload }};" class="logoutButton" type="button" > Upload </a>
+                <a href="javascript:displayUploader();" style="display: {{ upload }};" class="logoutButton" type="button" > Upload </a>
                 <a href="/favorites" style="display: {{ favorites }};" class="logoutButton" type="button" > Favorites </a>
                 <a href="/auth/logout" style="display: {{ logOUT_Display }};" class="logoutButton" type="button" > Sign Out </a>
             </div>
@@ -29,6 +30,7 @@
     <div class="Content">
         <div class="work">
             <img src="{{ WorkLink }}" />
+            <h1 class="userName">{{ ImageTitle }}</h1>
             <p class="textFont">
                 <span>By {{ author }}</span>
                 <br/>
@@ -36,6 +38,18 @@
                 <br />
                 <span>Description: {{ Description }}</span>
             </p>
+        </div>
+    </div>
+    <div id="mask">
+        <div class="Uploader">
+            <h1 class="userName">Upload your artwork.</h1>
+            <form action="" onsubmit="return ">
+                <input class="SingleTextLine" type="text" placeholder="Title" />
+                <textarea class="MultiText" placeholder="Description"></textarea>
+                <input class="logoutButton" type="file" />
+                <input class="logoutButton" type="submit" value="Upload"/>
+            </form>
+            <button class="logoutButton" type="button" onclick="displayUploader()">Back</button>
         </div>
     </div>
 </body>
