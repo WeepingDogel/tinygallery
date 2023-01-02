@@ -58,3 +58,11 @@ function avatarChecking(){
         return false;
     }
 }
+function displayUploader(){
+    var uploader = document.getElementById('mask');
+    if(uploader.style.display == "block"){
+        uploader.style.display = "none";
+    }else{
+        uploader.style.display = "block";
+    }
+}
