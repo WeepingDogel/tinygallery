@@ -1,4 +1,4 @@
-![](/cover.jpg)
+![]()
 
 # Introduction
 
