@@ -22,16 +22,21 @@
         <a class="logoutButton" href="/">Home</a>
     </div>
     <div class="Published">
+        {% for x in Images %}
         <div class="work">
-            <img src="{{ WorkLink }}" />
+            <img src="{{ x['FileName'] }}" />
+            <h1 class="userName">{{ x['ImageTitle'] }}</h1>
             <p class="textFont">
-                <span>By {{ author }}</span>
+                <span>By {{ x['User'] }}</span>
                 <br/>
-                <span>Likes: {{ dots }}</span>
+                <span>Likes: {{ x['Dots'] }}</span>
                 <br />
-                <span>Description: {{ Description }}</span>
+                <span>Description: {{ x['Description'] }}</span>
+                <br />
+                <span>Date: {{x['Date']}}</span>
             </p>
         </div>
+        {% endfor %}
     </div>
     <script type="text/javascript" src="static/js/Main.js"></script>
 </body>
