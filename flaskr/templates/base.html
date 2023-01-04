@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}{% endblock %}
+    <link type="text/css" rel="stylesheet" href="/static/css/MainStyle.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/Fonts.css" />
+    <script src="static/js/Main.js" type="text/javascript"></script>
+    <title>{% block Title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="TopBar">
+        <h1 class="titleLine"> T i n y G a l l e r y 1.0 </h1>
+        <div class="menuButton">
+            {% if g.user %}
+            <p class="userNameTag">{{ userName }}</p>
+            {% else %}
+            <p class="userNameTag">Please Login</p>
+            {% endif %}
+            <div class="ProfileBar">
+                <div class="avatar">
+                    {% if g.user %}
+                    <img class="avatarIMG" src="{{ userAvaterImage }}" />
+                    {% else %}
+                    <img class="avatarIMG" src="/static/img/default_avatar.jpg" />
+                    {% endif %}
+                </div>
+                {% if g.user %}                
+                <p class="userName">{{ userName }}</p>                              
+                <a href="/profile" class="logoutButton"> Profile </a>               
+                <a href="javascript:displayUploader();" class="logoutButton" type="button" > Upload </a>                
+                <a href="/favorites" class="logoutButton" type="button" > Favorites </a>                
+                <a href="/auth/logout" class="logoutButton" type="button" > Sign Out </a>
+                {% else %}
+                <p class="userName">Please Login</p>
+                <a href="/login_and_register" class="loginButton" type="button" > Sign In </a> 
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% block body %}{% endblock %}
+</body>
+</html>
