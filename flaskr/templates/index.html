@@ -47,7 +47,7 @@
     <div id="mask">
         <div class="Uploader">
             <h1 class="userName">Upload your artwork.</h1>
-            <form action="/auth/upload" onsubmit="return uploaderChecking()" method="post" enctype="multipart/form-data">
+            <form name="uploader" action="/auth/upload" onsubmit="return uploaderChecking()" method="post" enctype="multipart/form-data">
                 <input name="Title" class="SingleTextLine" type="text" placeholder="Title" />
                 <textarea name="Description" class="MultiText" placeholder="Description"></textarea>
                 <input name="Picture" class="logoutButton" type="file" />
