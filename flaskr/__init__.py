@@ -6,6 +6,7 @@ import os
 import time
 from . import db
 from . import auth
+from . import remark
 from flask import *
 
 def create_app(test_config=None):
@@ -14,7 +15,7 @@ def create_app(test_config=None):
         SECRET_KEY = '600c84ec0e84b99d468eafa2fdd52e1b659c9fa5e23a0ec91bab6b7e94272da8',
         DATABASE = os.path.join(app.instance_path, 'database.sqlite'),
         USERFILE_DIR = "flaskr/static/img/users",
-        PUBLIC_USERFILES = "static/img/users"
+        PUBLIC_USERFILES = "/static/img/users"
     )
     
     if test_config is None:
@@ -34,29 +35,19 @@ def create_app(test_config=None):
         database = db.get_db()
         ImageTable = database.execute("SELECT * FROM IMAGES")
         if 'username' in session:
+            userAvaterImage = app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
             return render_template(
-            "index.html", 
-            PageTitle="HomePage", 
-            userAvaterImage=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", 
-            userName=session['username'], 
-            logIN_Display="none",
-            logOUT_Display="block", 
-            profileDisplay="block", 
-            upload="block", 
-            favorites="block",
-            Images=ImageTable)
-        else:    
+                "index.html", 
+                PageTitle="HomePage", 
+                Images=ImageTable, 
+                userAvaterImage=userAvaterImage, 
+                userName=session['username'])
+        else:
             return render_template(
-            "index.html", 
-            PageTitle="HomePage", 
-            userAvaterImage="static/img/default_avatar.jpg",
-            userName="Please Log In", 
-            logIN_Display="block",
-            logOUT_Display="none",
-            profileDisplay="none",
-            upload="none",
-            favorites="none",
-            Images=ImageTable)
+                "index.html",
+                PageTitle="HomePage",
+                Images=ImageTable)
+            
     
     @app.route("/login_and_register")
     def LoginPage():
@@ -64,12 +55,20 @@ def create_app(test_config=None):
     
     @app.route("/profile")
     def profile():
+        database = db.get_db()
+        ImageTable = database.execute("SELECT * FROM IMAGES")
         if 'username' in session:
-            return render_template("profile.html", userName=session['username'], AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", BG_Link="static/img/defaultBG.jpg")
+            return render_template(
+                "profile.html", 
+                userName=session['username'], 
+                AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", 
+                BG_Link="static/img/defaultBG.jpg",
+                Images=ImageTable)
         else:
             return render_template("profile.html", userName="Undefined")
 
     db.init_app(app)
     app.register_blueprint(auth.bp)
+    app.register_blueprint(remark.bp)
 
     return app
