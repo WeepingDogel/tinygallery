@@ -56,8 +56,8 @@ def create_app(test_config=None):
     @app.route("/profile")
     def profile():
         database = db.get_db()
-        ImageTable = database.execute("SELECT * FROM IMAGES")
         if 'username' in session:
+            ImageTable = database.execute("SELECT * FROM IMAGES WHERE User = ?",(session['username'],))
             return render_template(
                 "profile.html", 
                 userName=session['username'], 
