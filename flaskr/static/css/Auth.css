@@ -13,6 +13,18 @@ body{
     justify-content: center;
     background: linear-gradient(to right,pink, skyblue);
 }
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        top: 10px;
+    }
+    to{
+        opacity: 1;
+        top: 0;
+    }
+}
+
 @media screen and (min-width:900px) {
     .panelLogin{
         width: 400px;
@@ -21,6 +33,7 @@ body{
         background-color: white;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         margin-top: 10%;
+        animation: fadeIn 1000ms;
     }
     .Head{
         border-top-left-radius: 20px;
@@ -87,7 +100,9 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         margin-top: 6%;
         display: none;
+        animation: fadeIn 1000ms;
     }
+    
 }
 @media screen and (max-width:900px) {
     body{
@@ -100,6 +115,7 @@ body{
         background-color: white;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         margin-top: 10%;
+        animation: fadeIn 1000ms;
     }
     .Head{
         border-top-left-radius: 20px;
@@ -166,5 +182,6 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         margin-top: 6%;
         display: none;
+        animation: fadeIn 1000ms;
     }
 }
