@@ -80,3 +80,9 @@ function uploaderChecking(){
         return false;
     }
 }
+function OpenFullImage(numID){
+    let ClassObject = document.getElementsByClassName('displayedImages')[numID - 1];
+    let ImageUUID = ClassObject.alt;
+
+    window.open( "/remark/" + ImageUUID);
+}
