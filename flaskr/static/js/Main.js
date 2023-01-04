@@ -68,4 +68,15 @@ function displayUploader(){
 }
 function uploaderChecking(){
     // Frontend checking.
+    var form = document.forms['uploader'];
+    if(form['Title'].value == ""){
+        alert("Title is not allowed to be empty.");
+        return false;
+    }else if(form['Description'].value == ""){
+        alert("Description is required.");
+        return false;
+    }else if(form['Picture'].value == ""){
+        alert("No file selected!")
+        return false;
+    }
 }
