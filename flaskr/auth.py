@@ -1,6 +1,6 @@
 # Authorization
 
-import functools,time,os
+import functools,time,os,uuid
 from flaskr.db import get_db
 from flask import(
     Blueprint, 
@@ -29,7 +29,8 @@ def register():
             return "Username, password and email is required <a href='/login_and_register'>Back</a>"
         elif passWord == repeatPassword:
             try:
-                db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",(userName, passWord, Email, Date))
+                db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",
+                    (userName, passWord, Email, Date))
                 db.commit()
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName)
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images")
@@ -91,9 +92,23 @@ def upload():
             Description = request.form['Description']
             User = session['username']
             Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-            db.execute("INSERT INTO IMAGES(FileName, ImageTitle, Description, User, Date) VALUES(?, ?, ?, ?, ?)",(FileName, ImageTitle, Description, User, Date))
+            UUID = str(uuid.uuid4())
+            db.execute(
+                "INSERT INTO IMAGES(UUID, FileName, ImageTitle, Description, User, Date) VALUES(?, ?, ?, ?, ?, ?)",
+                (UUID ,FileName, ImageTitle, Description, User, Date))
             db.commit()
             f.save(UPLOAD_LOCALTION + "/" + f.filename)
             return redirect(url_for('index'))
         else:
             return "Invalid Filename " + f.filename + " <a href='/'>Back</a>"
+
+@bp.before_app_request
+def load_logged_in_user():
+    user_id = session.get('username')
+
+    if user_id is None:
+        g.user = None
+    else:
+        g.user = get_db().execute(
+            'SELECT * FROM USERS WHERE UserName = ?', (user_id,)
+        ).fetchone()
