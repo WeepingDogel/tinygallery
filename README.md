@@ -23,7 +23,7 @@ An open-source project providing the drawing lovers a free and simple gallery se
 Download the source
 
 ```
-wget https://github.com/WeepingDogel/tinygallery/archive/refs/tags/v0.0.1-beta.tar.gz
+wget https://github.com/WeepingDogel/tinygallery/archive/refs/tags/<version>.tar.gz
 ```
 
 Unpack
