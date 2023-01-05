@@ -24,7 +24,7 @@
     <div class="Published">
         {% for x in Images %}
         <div class="work">
-            <img class="displayedImages" onclick="OpenFullImage({{ loop["index"] }})" src="{{ x['FileName'] }}" alt="{{ x['UUID'] }}" />
+            <img class="displayedImages" onclick="OpenFullImage({{ loop["index"] }})" src="/static/img/users/{{ x['User'] }}/Images/{{ x['UUID'] }}.jpg" alt="{{ x['UUID'] }}" />
             <h1 class="userName">{{ x['ImageTitle'] }}</h1>
             <p class="textFont">
                 <span>By {{ x['User'] }}</span>
