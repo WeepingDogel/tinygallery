@@ -1,6 +1,6 @@
 # Authorization
 
-import functools,time,os,uuid
+import functools,time,os,uuid,cv2
 from flaskr.db import get_db
 from flask import(
     Blueprint, 
@@ -34,6 +34,7 @@ def register():
                 db.commit()
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName)
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images")
+                os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images/Original")
                 os.system("cp flaskr/static/img/default_avatar.jpg " + current_app.config['USERFILE_DIR'] + "/" + userName + "/avatar.jpg")
                 return redirect(url_for('LoginPage'))
             except db.IntegrityError:
@@ -81,23 +82,28 @@ def upload():
         return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
     if request.method == "POST":
-        UPLOAD_LOCALTION = os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/Images")
+        UploadLoacation = os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/Images/Original")
         db = get_db()
         f = request.files['Picture']
         if f.filename == '':
             return "Empty file is not allowed to submit <a href='/'>Back</a>"
         elif allowed_file(f.filename):
-            FileName = current_app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/Images" + "/" + f.filename
+            OriginalFileName = current_app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/Images" + "/Original/" + f.filename
             ImageTitle = request.form['Title']
             Description = request.form['Description']
             User = session['username']
             Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
             UUID = str(uuid.uuid4())
             db.execute(
-                "INSERT INTO IMAGES(UUID, FileName, ImageTitle, Description, User, Date) VALUES(?, ?, ?, ?, ?, ?)",
-                (UUID ,FileName, ImageTitle, Description, User, Date))
+                "INSERT INTO IMAGES(UUID, OriginalFileName, ImageTitle, Description, User, Date) VALUES(?, ?, ?, ?, ?, ?)",
+                (UUID , OriginalFileName, ImageTitle, Description, User, Date))
             db.commit()
-            f.save(UPLOAD_LOCALTION + "/" + f.filename)
+            f.save(UploadLoacation + "/" + f.filename)
+            img = cv2.imread(UploadLoacation + "/" + f.filename)
+            h,w = img.shape[:2]
+            new_h, new_w = int(h / 3),int(w / 3)
+            resizedImg = cv2.resize(img, (new_w, new_h))
+            cv2.imwrite(current_app.config['USERFILE_DIR'] + "/" + session['username'] + "/Images/" + UUID + ".jpg", resizedImg)
             return redirect(url_for('index'))
         else:
             return "Invalid Filename " + f.filename + " <a href='/'>Back</a>"
@@ -112,3 +118,4 @@ def load_logged_in_user():
         g.user = get_db().execute(
             'SELECT * FROM USERS WHERE UserName = ?', (user_id,)
         ).fetchone()
+        
