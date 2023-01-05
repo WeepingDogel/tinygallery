@@ -19,7 +19,7 @@ def ViewFullImage(IMAGE_UUID):
     if IMAGE_UUID != '':
         db = get_db()
         Data = db.execute(
-            'SELECT FileName,ImageTitle FROM IMAGES WHERE UUID = ?;',
+            'SELECT OriginalFileName,ImageTitle FROM IMAGES WHERE UUID = ?;',
             (IMAGE_UUID,)
         ).fetchone()
         Comments = db.execute(
@@ -32,7 +32,7 @@ def ViewFullImage(IMAGE_UUID):
         return render_template(
             "remark.html", 
             PageTitle=Data['ImageTitle'], 
-            FileName=Data['FileName'],
+            FileName=Data['OriginalFileName'],
             userAvaterImage=userAvaterImage,
             userName=session['username'],
             postUUID=IMAGE_UUID,
@@ -41,7 +41,7 @@ def ViewFullImage(IMAGE_UUID):
         return render_template(
             "remark.html", 
             PageTitle=Data['ImageTitle'], 
-            FileName=Data['FileName'],
+            FileName=Data['OriginalFileName'],
             postUUID=IMAGE_UUID,
             Comments=Comments)
 
@@ -62,5 +62,4 @@ def SendComment():
                 (postUUID, remarkUUID, User, Content, Date))
             db.commit()
             return redirect(url_for("remark.ViewFullImage", IMAGE_UUID=postUUID))
-        
-        
+            
