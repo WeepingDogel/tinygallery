@@ -24,7 +24,7 @@
     <div class="Published">
         {% for x in Images %}
         <div class="work">
-            <img src="{{ x['FileName'] }}" />
+            <img class="displayedImages" onclick="OpenFullImage({{ loop["index"] }})" src="{{ x['FileName'] }}" alt="{{ x['UUID'] }}" />
             <h1 class="userName">{{ x['ImageTitle'] }}</h1>
             <p class="textFont">
                 <span>By {{ x['User'] }}</span>
@@ -38,6 +38,6 @@
         </div>
         {% endfor %}
     </div>
-    <script type="text/javascript" src="static/js/Main.js"></script>
+    <script type="text/javascript" src="/static/js/Main.js"></script>
 </body>
 </html>
