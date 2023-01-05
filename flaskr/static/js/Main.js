@@ -86,3 +86,11 @@ function OpenFullImage(numID){
 
     window.open( "/remark/" + ImageUUID);
 }
+
+function GetUUIDfromVirutalInput(){
+    let inputValue = document.getElementById("VirtualInput");
+    let postUUID = document.getElementById("FullSizeImage");
+    inputValue.value = postUUID.alt;
+}
+
+GetUUIDfromVirutalInput();
