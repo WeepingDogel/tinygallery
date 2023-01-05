@@ -18,17 +18,4 @@
     </div>
     {% endfor %}
 </div>
-<div id="mask">
-    <div class="Uploader">
-        <h1 class="userName">Upload your artwork.</h1>
-        <form name="uploader" action="/auth/upload" onsubmit="return uploaderChecking()" method="post" enctype="multipart/form-data">
-            <input name="Title" class="SingleTextLine" type="text" placeholder="Title" />
-            <textarea name="Description" class="MultiText" placeholder="Description"></textarea>
-            <input name="Picture" class="logoutButton" type="file" />
-            <input class="logoutButton" type="submit" value="Upload"/>
-        </form>
-        <button class="logoutButton" type="button" onclick="displayUploader()">Back</button>
-        <p class="textFont" style="display: none;"></p>
-    </div>
-</div>
 {% endblock %}
