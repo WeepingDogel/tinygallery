@@ -33,7 +33,7 @@ def create_app(test_config=None):
     @app.route("/")
     def index():
         database = db.get_db()
-        ImageTable = database.execute("SELECT * FROM IMAGES")
+        ImageTable = database.execute("SELECT * FROM IMAGES ORDER BY Date DESC")
         if 'username' in session:
             userAvaterImage = app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
             return render_template(
@@ -72,3 +72,4 @@ def create_app(test_config=None):
     app.register_blueprint(remark.bp)
 
     return app
+    
