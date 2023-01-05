@@ -8,15 +8,22 @@ An open-source project providing the drawing lovers a free and simple gallery se
 
 # Dependencies
 
-* python3
+* certifi==2022.12.7
+* charset-normalizer==2.1.1
 * click==8.1.3
+* docopt==0.6.2
 * Flask==2.2.2
+* idna==3.4
+* itsdangerous==2.1.2
 * Jinja2==3.1.2
 * MarkupSafe==2.1.1
+* numpy==1.24.1
+* opencv-python==4.7.0.68
+* pipreqs==0.4.11
 * requests==2.28.1
+* urllib3==1.26.13
 * Werkzeug==2.2.2
-* waitress==2.1.2
-
+* yarg==0.1.9
 
 # Installation 
 
@@ -50,10 +57,10 @@ Active Virtual environment
 . venv/bin/activate
 ```
 
-Install Flask and waitress
+Install Dependencies.
 
 ```
-pip3 install flask waitress
+pip3 install -r ./requirements.txt
 ```
 
 Initialization database
