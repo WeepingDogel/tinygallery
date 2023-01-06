@@ -100,3 +100,30 @@ function GetUUIDfromVirutalInput(){
 }
 
 GetUUIDfromVirutalInput();
+
+function ReplyTo(numID){
+    scrollTo(0,0);
+    let ReplyTo = document.getElementsByClassName("Reply")[numID - 1];
+    let ReplyToUser = document.getElementsByClassName("ReplyToUser")[numID - 1];
+    let InputValueOfReplyTo = document.getElementById("ReplyTo");
+    let InputValueOfReplyToUser = document.getElementById("ReplyToUser");
+    InputValueOfReplyTo.value = ReplyTo.value;
+    InputValueOfReplyToUser.value = ReplyToUser.innerText;
+    SendComments();
+}
+
+function SendComments() {
+    scrollTo(0,0);
+    var Commenter = document.getElementById('mask');
+    if(Commenter.style.display == "block"){
+        Commenter.style.display = "none";
+    }else{
+        Commenter.style.display = "block";
+    }
+}
+function ClearReply(){
+    let InputValueOfReplyTo = document.getElementById("ReplyTo");
+    let InputValueOfReplyToUser = document.getElementById("ReplyToUser");
+    InputValueOfReplyTo.value = "";
+    InputValueOfReplyToUser.value = "";
+}
