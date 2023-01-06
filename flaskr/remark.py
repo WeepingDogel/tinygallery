@@ -62,7 +62,7 @@ def SendComment():
         User = session['username']
         postUUID = request.form['postUUID']
         ReplyTo = request.form['ReplyTo']
-        ReplyToUser = request.form['ReplyToUser']
+        ReplyToUser = request.form['ReplyToUser'] + " | " + request.form['ReplyToDate']
         Content = request.form['ContentOfComments']
         remarkUUID = str(uuid.uuid4())
         Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
