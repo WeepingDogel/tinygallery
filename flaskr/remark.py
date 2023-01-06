@@ -19,7 +19,7 @@ def ViewFullImage(IMAGE_UUID):
     if IMAGE_UUID != '':
         db = get_db()
         Data = db.execute(
-            'SELECT OriginalFileName,ImageTitle FROM IMAGES WHERE UUID = ?;',
+            'SELECT OriginalFileName,ImageTitle,Description,User,Date,Dots FROM IMAGES WHERE UUID = ?;',
             (IMAGE_UUID,)
         ).fetchone()
         Comments = db.execute(
@@ -31,7 +31,12 @@ def ViewFullImage(IMAGE_UUID):
         userAvaterImage = current_app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
         return render_template(
             "remark.html", 
-            PageTitle=Data['ImageTitle'], 
+            PageTitle=Data['ImageTitle'],
+            ImageTitle=Data['ImageTitle'],
+            Description=Data['Description'],
+            Date = Data['Date'],
+            User = Data['User'],
+            Likes = Data['Dots'], 
             FileName=Data['OriginalFileName'],
             userAvaterImage=userAvaterImage,
             userName=session['username'],
@@ -40,7 +45,12 @@ def ViewFullImage(IMAGE_UUID):
     else:
         return render_template(
             "remark.html", 
-            PageTitle=Data['ImageTitle'], 
+            PageTitle=Data['ImageTitle'],
+            ImageTitle=Data['ImageTitle'],
+            Description=Data['Description'],
+            Date = Data['Date'],
+            User = Data['User'],
+            Likes = Data['Dots'],  
             FileName=Data['OriginalFileName'],
             postUUID=IMAGE_UUID,
             Comments=Comments)
@@ -51,6 +61,8 @@ def SendComment():
         db = get_db()
         User = session['username']
         postUUID = request.form['postUUID']
+        ReplyTo = request.form['ReplyTo']
+        ReplyToUser = request.form['ReplyToUser']
         Content = request.form['ContentOfComments']
         remarkUUID = str(uuid.uuid4())
         Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -58,8 +70,8 @@ def SendComment():
             return redirect(url_for("remark.ViewFullImage", IMAGE_UUID=postUUID))
         else:
             db.execute(
-                "INSERT INTO COMMENTS(postUUID, remarkUUID, User, Comment, Date) VALUES(?,?,?,?,?)",
-                (postUUID, remarkUUID, User, Content, Date))
+                "INSERT INTO COMMENTS(postUUID, remarkUUID, ReplyTo, ReplyToUser,User, Comment, Date) VALUES(?,?,?,?,?,?,?)",
+                (postUUID, remarkUUID, ReplyTo, ReplyToUser, User, Content, Date))
             db.commit()
             return redirect(url_for("remark.ViewFullImage", IMAGE_UUID=postUUID))
             
