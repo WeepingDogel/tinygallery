@@ -105,10 +105,14 @@ function ReplyTo(numID){
     scrollTo(0,0);
     let ReplyTo = document.getElementsByClassName("Reply")[numID - 1];
     let ReplyToUser = document.getElementsByClassName("ReplyToUser")[numID - 1];
+    let ReplyToDate = document.getElementsByClassName("ReplyToDate")[numID - 1];
     let InputValueOfReplyTo = document.getElementById("ReplyTo");
     let InputValueOfReplyToUser = document.getElementById("ReplyToUser");
+    let InputValueOfReplyToDate = document.getElementById("ReplyToDate");
     InputValueOfReplyTo.value = ReplyTo.value;
     InputValueOfReplyToUser.value = ReplyToUser.innerText;
+    InputValueOfReplyToDate.value = ReplyToDate.innerText;
+
     SendComments();
 }
 
@@ -124,6 +128,8 @@ function SendComments() {
 function ClearReply(){
     let InputValueOfReplyTo = document.getElementById("ReplyTo");
     let InputValueOfReplyToUser = document.getElementById("ReplyToUser");
+    let InputValueOfReplyToDate = document.getElementById("ReplyToDate");
     InputValueOfReplyTo.value = "";
     InputValueOfReplyToUser.value = "";
+    InputValueOfReplyToDate.value = "";
 }
