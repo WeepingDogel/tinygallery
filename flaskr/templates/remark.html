@@ -6,25 +6,51 @@
         <img id="FullSizeImage" src="{{ FileName }}" alt="{{ postUUID }}" onclick="OpenImageOnNewWindow()" />
     </div>
     <div class="RemarkPanel" >
-        <div class="SendComments">
-            {% if g.user %}
-            <form action="/remark/comment"  name="Comments" onsubmit="" method="post">
-                <textarea class="MultiText" name="ContentOfComments" id="TheContent" cols="30" rows="10" placeholder="Say Something?"></textarea>
-                <input class="logoutButton" value="Send" type="submit" />
-                <input name="postUUID" id="VirtualInput" style="display: none;"/>
-            </form>
-            {% else %}
-            <p class="textFont"> Please Login to comment.</p>
-            {% endif %}
-        </div>
+        <h1 class="userName">{{ ImageTitle }}</h1>
+        <p class="textFont">
+            <span>{{ Description }}</span>
+            <br />
+            <span>By {{ User }}</span>
+            <br />
+            <span> Likes: {{ Likes }} </span>
+            <br />
+            <span>{{ Date }}</span>
+        </p>
+        {% if g.user %}
+        <button type="button" class="logoutButton" onclick="SendComments();">Comment</button>    
+        {% else %}
+        <p class="textFont"> Please Login to comment.</p>
+        {% endif %}
         {% for x in Comments %}
         <div class="Remarks" id="{{ x['remarkUUID'] }}">
             <img src="/static/img/users/{{ x['User'] }}/avatar.jpg" />
-            <h1 class="userName">{{ x['User'] }}</h1>
-            <p class="textFont">{{ x['Comment'] }}</p>
+            <h1 class="ReplyToUser userName">{{ x['User'] }}</h1>
+            <p class="textFont">
+                {% if x['ReplyTo'] != "" %}
+                <a href="#{{ x['ReplyTo'] }}">@{{ x['ReplyToUser'] }}</a>
+                {{ x['Comment'] }}
+                {% else %}
+                {{ x['Comment'] }}
+                {% endif %}
+            </p>
             <p class="textFont">Date: {{ x['Date'] }}</p>
+            <button class="Reply logoutButton" value="{{ x['remarkUUID'] }}" type="button" onclick="ReplyTo('{{ loop["index"] }}')" >Reply</button>
         </div>
         {% endfor %}
     </div>
 </div>
+{% if g.user %}
+<div id="mask">
+    <div id="SendComments" class="Uploader">
+        <form action="/remark/comment"  name="Comments" onsubmit="" method="post">
+            <input style="display: none;" name="ReplyTo" id="ReplyTo" class="SingleTextLine" />
+            <input onclick="ClearReply();" name="ReplyToUser" id="ReplyToUser" class="SingleTextLine" placeholder="ReplyTo" readonly="readonly" />
+            <textarea class="MultiText" name="ContentOfComments" id="TheContent" cols="30" rows="10" placeholder="Say Something?"></textarea>
+            <input class="logoutButton" value="Send" type="submit" />
+            <input name="postUUID" id="VirtualInput" style="display: none;"/>
+        </form>
+        <button class="logoutButton" type="button" onclick="SendComments();">Back</button>
+    </div>
+</div>
+    {% endif %}
 {% endblock %}
