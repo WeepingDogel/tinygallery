@@ -5,10 +5,12 @@ function SelectToRegister() {
     document.getElementById("panelLogin").style.display = "none";
     document.getElementById("panelRegister").style.display = "block";
 }
+
 function SelectToLogin() {
     document.getElementById("panelLogin").style.display = "block";
     document.getElementById("panelRegister").style.display = "none";
 }
+
 function loginAuthCheck(){
     var form = document.forms['loginForm'];
     var backMessage = document.getElementById("loginBackMessage");
@@ -26,6 +28,7 @@ function loginAuthCheck(){
         return false;
     }
 }
+
 function registerAuthCheck(){
     var form = document.forms['registerForm'];
     var backMessage = document.getElementById("registerBackMessage");
@@ -51,6 +54,7 @@ function registerAuthCheck(){
         return false;
     }
 }
+
 function avatarChecking(){
     var form = document.forms['avatarChanging'];
     if(form['file'].value == ""){
@@ -58,6 +62,7 @@ function avatarChecking(){
         return false;
     }
 }
+
 function displayUploader(){
     var uploader = document.getElementById('mask');
     if(uploader.style.display == "block"){
@@ -66,6 +71,7 @@ function displayUploader(){
         uploader.style.display = "block";
     }
 }
+
 function uploaderChecking(){
     // Frontend checking.
     var form = document.forms['uploader'];
@@ -80,6 +86,7 @@ function uploaderChecking(){
         return false;
     }
 }
+
 function OpenFullImage(numID){
     let ClassObject = document.getElementsByClassName('displayedImages')[numID - 1];
     let ImageUUID = ClassObject.alt;
@@ -125,6 +132,7 @@ function SendComments() {
         Commenter.style.display = "block";
     }
 }
+
 function ClearReply(){
     let InputValueOfReplyTo = document.getElementById("ReplyTo");
     let InputValueOfReplyToUser = document.getElementById("ReplyToUser");
@@ -132,4 +140,70 @@ function ClearReply(){
     InputValueOfReplyTo.value = "";
     InputValueOfReplyToUser.value = "";
     InputValueOfReplyToDate.value = "";
+}
+
+
+function SendLikedData(numID, LikeStatus){
+    xmlhttp = new XMLHttpRequest();
+    let LikeButton = document.getElementsByClassName("likeStatus0")[numID - 1];
+    let unlikeButton = document.getElementsByClassName('likeStatus1')[numID - 1];
+    let ImageUUID = document.getElementsByClassName('displayedImages')[numID - 1];
+    let LikesNum = document.getElementsByClassName('LikesNum')[numID - 1];
+
+    if(LikeStatus == "Like"){
+        LikeButton.style.display = "none"
+        xmlhttp.open('GET','/action/likeCheck?UUID=' + ImageUUID.alt + "&LikeStatus=1", true);
+        xmlhttp.send();
+
+    }else if(LikeStatus == 'Unlike'){
+        unlikeButton.style.display = "none"
+        xmlhttp.open('GET','/action/likeCheck?UUID=' + ImageUUID.alt + "&LikeStatus=0", true);
+        xmlhttp.send();
+    }
+
+    xmlhttp.onreadystatechange=function(){
+
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            JsonData = JSON.parse(xmlhttp.response);
+            if(JsonData.Status == 1){
+                unlikeButton.style.display = "inline";
+                LikesNum.innerText = "Likes:" + JsonData.Dots;
+            }else if(JsonData.Status == 0){
+                LikeButton.style.display = "inline";
+                LikesNum.innerText = "Likes:" + JsonData.Dots;
+            }
+        }
+
+    }
+}
+
+function SendLikedDataInFullImage(ImageUUID,LikeStatus){
+    xmlhttp = new XMLHttpRequest();
+    let LikeButton = document.getElementById('likeStatus0');
+    let unlikeButton = document.getElementById('likeStatus1');
+    let likesNum = document.getElementById('likesNum');
+
+    if(LikeStatus == 'Like'){
+        LikeButton.style.display = "none";
+        xmlhttp.open('GET','/action/likeCheck?UUID=' + ImageUUID + "&LikeStatus=1", true);
+        xmlhttp.send();
+    }else if(LikeStatus == 'Unlike'){
+        unlikeButton.style.display = "none"
+        xmlhttp.open('GET','/action/likeCheck?UUID=' + ImageUUID + "&LikeStatus=0", true);
+        xmlhttp.send();
+    }
+    xmlhttp.onreadystatechange=function(){
+
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            JsonData = JSON.parse(xmlhttp.response);
+            if(JsonData.Status == 1){
+                unlikeButton.style.display = "inline";
+                likesNum.innerText = "Likes:" + JsonData.Dots;
+            }else if(JsonData.Status == 0){
+                LikeButton.style.display = "inline";
+                likesNum.innerText = "Likes:" + JsonData.Dots;
+            }
+        }
+
+    }
 }
