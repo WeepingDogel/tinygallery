@@ -7,6 +7,7 @@ import time
 from . import db
 from . import auth
 from . import remark
+from . import action
 from flask import *
 
 def create_app(test_config=None):
@@ -35,13 +36,20 @@ def create_app(test_config=None):
         database = db.get_db()
         ImageTable = database.execute("SELECT * FROM IMAGES ORDER BY Date DESC")
         if 'username' in session:
+            LikeTable = database.execute(
+                "SELECT LikedPostUUID FROM ImagesLikedByUser WHERE User = ? AND LikeStatus = ?",
+                (session['username'],1,)).fetchall()
+            LikedList = []
+            for i in LikeTable:
+                LikedList.append(str(i[0]))
             userAvaterImage = app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
             return render_template(
                 "index.html", 
                 PageTitle="HomePage", 
                 Images=ImageTable, 
                 userAvaterImage=userAvaterImage, 
-                userName=session['username'])
+                userName=session['username'],
+                LikedList=LikedList)
         else:
             return render_template(
                 "index.html",
@@ -57,19 +65,27 @@ def create_app(test_config=None):
     def profile():
         database = db.get_db()
         if 'username' in session:
+            LikeTable = database.execute(
+                "SELECT LikedPostUUID FROM ImagesLikedByUser WHERE User = ? AND LikeStatus = ?",
+                (session['username'],1,)).fetchall()
+            LikedList = []
+            for i in LikeTable:
+                LikedList.append(str(i[0]))
             ImageTable = database.execute("SELECT * FROM IMAGES WHERE User = ?",(session['username'],))
             return render_template(
                 "profile.html", 
                 userName=session['username'], 
                 AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", 
                 BG_Link="static/img/defaultBG.jpg",
-                Images=ImageTable)
+                Images=ImageTable,
+                LikedList=LikedList)
         else:
             return render_template("profile.html", userName="Undefined")
 
     db.init_app(app)
     app.register_blueprint(auth.bp)
     app.register_blueprint(remark.bp)
+    app.register_blueprint(action.bp)
 
     return app
     

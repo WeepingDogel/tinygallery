@@ -26,8 +26,14 @@ def ViewFullImage(IMAGE_UUID):
             "SELECT * FROM COMMENTS WHERE postUUID = ? Order By Date DESC",
             (IMAGE_UUID,)
             )
-
+            
     if 'username' in session:
+        LikeTable = db.execute(
+            "SELECT LikedPostUUID FROM ImagesLikedByUser WHERE User = ? AND LikeStatus = ?",
+            (session['username'],1,)).fetchall()
+        LikedList = []
+        for i in LikeTable:
+            LikedList.append(str(i[0]))
         userAvaterImage = current_app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
         return render_template(
             "remark.html", 
@@ -41,7 +47,8 @@ def ViewFullImage(IMAGE_UUID):
             userAvaterImage=userAvaterImage,
             userName=session['username'],
             postUUID=IMAGE_UUID,
-            Comments=Comments)
+            Comments=Comments,
+            LikedList=LikedList)
     else:
         return render_template(
             "remark.html", 
