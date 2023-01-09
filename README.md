@@ -35,7 +35,9 @@ An open-source project providing the drawing lovers a free and simple gallery se
 * Werkzeug==2.2.2
 * yarg==0.1.9
 
-# Installation 
+# Installation ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+
+
 
 Download the source
 
@@ -85,7 +87,7 @@ Start WSGI server
 waitress-serve --host 127.0.0.1 --call flaskr:create_app
 ```
 
-Proxy WSGI server with http server for example : ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+Proxy WSGI server with http server for example :nginx
 
 * add some config to /etc/nginx/nginx.conf
 
