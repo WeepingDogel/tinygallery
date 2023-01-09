@@ -14,7 +14,7 @@ An open-source project providing the drawing lovers a free and simple gallery se
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
+
 
 # Dependencies
 
@@ -85,7 +85,7 @@ Start WSGI server
 waitress-serve --host 127.0.0.1 --call flaskr:create_app
 ```
 
-Proxy WSGI server with http server for example :nginx
+Proxy WSGI server with http server for example : ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
 
 * add some config to /etc/nginx/nginx.conf
 
