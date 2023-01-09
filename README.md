@@ -32,6 +32,7 @@ An open-source project providing the drawing lovers a free and simple gallery se
 * pipreqs==0.4.11
 * requests==2.28.1
 * urllib3==1.26.13
+* waitress==2.1.2
 * Werkzeug==2.2.2
 * yarg==0.1.9
 

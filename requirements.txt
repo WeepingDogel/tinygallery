@@ -12,5 +12,6 @@ opencv-python==4.7.0.68
 pipreqs==0.4.11
 requests==2.28.1
 urllib3==1.26.13
+waitress==2.1.2
 Werkzeug==2.2.2
 yarg==0.1.9
