@@ -207,3 +207,10 @@ function SendLikedDataInFullImage(ImageUUID,LikeStatus){
 
     }
 }
+
+function deleteAccount(){
+    confirming = window.confirm('Are you sure for that? It will also delete your publishment, comments and everything!');
+    if(confirming == true){
+        window.location.replace('/auth/deleteAccount');
+    }
+}
