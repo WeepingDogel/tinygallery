@@ -14,7 +14,7 @@ from flask import(
     )
 
 bp = Blueprint('auth', __name__, url_prefix = '/auth')
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp'}
 
 @bp.route("/register", methods=('GET', 'POST'))
 def register():
@@ -103,7 +103,7 @@ def upload():
             h,w = img.shape[:2]
             new_h, new_w = int(h / 3),int(w / 3)
             resizedImg = cv2.resize(img, (new_w, new_h))
-            cv2.imwrite(current_app.config['USERFILE_DIR'] + "/" + session['username'] + "/Images/" + UUID + ".jpg", resizedImg)
+            cv2.imwrite(current_app.config['USERFILE_DIR'] + "/" + session['username'] + "/Images/" + UUID + ".jpg" , resizedImg)
             return redirect(url_for('index'))
         else:
             return "Invalid Filename " + f.filename + " <a href='/'>Back</a>"
