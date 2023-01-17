@@ -1,6 +1,6 @@
 # Authorization
 
-import functools,time,os,uuid,cv2
+import functools,time,os,uuid,cv2, shutil
 from flaskr.db import get_db
 from flask import(
     Blueprint, 
@@ -119,3 +119,34 @@ def load_logged_in_user():
             'SELECT * FROM USERS WHERE UserName = ?', (user_id,)
         ).fetchone()
         
+
+@bp.route('/deleteAccount')
+def deleteAccount():
+    if 'username' not in session:
+        return 'error!', 500
+    else:
+        username = session['username']
+        db = get_db()
+        db.execute(
+            'DELETE FROM USERS WHERE UserName =?',
+            (username,)
+            )
+        db.commit()
+        db.execute(
+            'DELETE FROM IMAGES WHERE User = ?',
+            (username,)
+            )
+        db.commit()
+        db.execute(
+            'DELETE FROM COMMENTS WHERE User = ?',
+            (username,)
+            )
+        db.commit()
+        db.execute(
+            'DELETE FROM ImagesLikedByUser WHERE User = ?',
+            (username,)
+            )
+        db.commit()
+        shutil.rmtree((current_app.config['USERFILE_DIR'] + '/' + username))
+
+        return redirect(url_for('auth.logout'))
