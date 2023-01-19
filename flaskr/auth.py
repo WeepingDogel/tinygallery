@@ -1,6 +1,6 @@
 # Authorization
 
-import functools,time,os,uuid,cv2, shutil
+import functools,time,os,uuid,cv2, shutil,hashlib
 from flaskr.db import get_db
 from flask import(
     Blueprint, 
@@ -21,6 +21,7 @@ def register():
     if request.method == 'POST':
         userName = request.form['username']
         passWord = request.form['password']
+        passWordToStore = hashlib.sha512(passWord.encode('utf-8')).hexdigest()
         repeatPassword = request.form['repeat_password']
         Email = request.form['email']
         Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
@@ -30,7 +31,7 @@ def register():
         elif passWord == repeatPassword:
             try:
                 db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",
-                    (userName, passWord, Email, Date))
+                    (userName, passWordToStore, Email, Date))
                 db.commit()
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName)
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images")
@@ -53,7 +54,8 @@ def login():
         ).fetchone()
         if users is None:
             return "User doesn't exist. <a href='/login_and_register'>Back</a>"
-        elif passWord != users['PassWord']:
+            
+        elif hashlib.sha512(passWord.encode('utf-8')).hexdigest() != users['PassWord']:
             return "Incorrect password. <a href='/login_and_register'>Back</a>"
         else:
             session.clear()
