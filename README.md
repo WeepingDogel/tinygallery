@@ -38,9 +38,7 @@ An open-source project providing the drawing lovers a free and simple gallery se
 * Werkzeug==2.2.2
 * yarg==0.1.9
 
-# Installation ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-
-
+# Mannual Installation  
 
 Download the source
 
@@ -126,3 +124,60 @@ sudo systemctl start nginx
 ```
 
 Enjoy~!
+
+# Quick Start By Docker
+
+## By DockerHub
+
+### 1. Pull Image:
+
+```
+sudo docker pull weepingdogel/tinygallery:latest
+```
+
+> Tips:
+>
+> You can also pull the exact version:
+>```
+>sudo docker pull weepingdogel/tinygallery:v0.5.1
+>```
+
+### 2. Run a container from image
+
+```
+sudo docker run -p 17779:80 -d weepingdogel/tinygallery:latest
+```
+
+### 3. Enjoy~!
+
+## By Dockerfile
+
+### 1. Download the file from the releases
+```
+wget https://github.com/WeepingDogel/tinygallery/releases/download/{ version }/TinyGallery-Docker-{ version }.tar.gz
+```
+
+For example, [v0.5.1](https://github.com/WeepingDogel/tinygallery/releases/tag/v0.5.1):
+```
+wget https://github.com/WeepingDogel/tinygallery/releases/download/v0.5.1/TinyGallery-Docker-0.5.1.tar.gz
+```
+
+### 2. Unpack the file
+
+```
+tar xzvf TinyGallery-Docker-0.5.1.tar.gz
+```
+
+### 3. Build the image
+
+```
+sudo docker build -t weepingdogel/tinygallery:tagname .
+```
+
+### 4. Run a container from image
+
+```
+sudo docker run -p 17779:80 -d weepingdogel/tinygallery:taggname 
+```
+
+### 5. Enjoy~
