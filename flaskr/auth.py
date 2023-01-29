@@ -25,18 +25,26 @@ def register():
         repeatPassword = request.form['repeat_password']
         Email = request.form['email']
         Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        avataruUUID = str(uuid.uuid4())
         db = get_db()
         if userName == "" or passWord == "" or Email == "":
             return "Username, password and email is required <a href='/login_and_register'>Back</a>"
         elif passWord == repeatPassword:
             try:
-                db.execute("INSERT INTO USERS(UserName, PassWord, Email, Date) VALUES(?, ?, ?, ?)",
-                    (userName, passWordToStore, Email, Date))
+                db.execute(
+                    "INSERT INTO USERS(UserName,PassWord, Email, Date) VALUES(?, ?, ?, ?)",
+                    (userName,passWordToStore, Email, Date)
+                    )
                 db.commit()
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName)
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images")
                 os.mkdir(current_app.config['USERFILE_DIR'] + "/" + userName + "/Images/Original")
-                os.system("cp flaskr/static/img/default_avatar.jpg " + current_app.config['USERFILE_DIR'] + "/" + userName + "/avatar.jpg")
+                os.system("cp flaskr/static/img/default_avatar.jpg " + current_app.config['USERFILE_DIR'] + "/" + userName + "/" + avataruUUID + ".jpg")
+                db.execute(
+                    "INSERT INTO AVATARS(UserName, Avatar) VALUES(?,?)",
+                    (userName, avataruUUID + ".jpg")
+                )
+                db.commit()
                 return redirect(url_for('LoginPage'))
             except db.IntegrityError:
                 return "User has already existed. <a href='/login_and_register'>Back</a>"
@@ -70,11 +78,22 @@ def logout():
 @bp.route("/avatar", methods=('POST','GET'))
 def avatar():
     if request.method == "POST":
+        UserName = session['username']
+        avatarUUID = str(uuid.uuid4())
+        db = get_db()
         f = request.files['file']
+        extFileName = os.path.splitext(f.filename)[-1]
         if f.filename == '':
             return redirect(url_for('profile'))
         else:
-            f.save(os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/avatar.jpg"))
+            os.system("rm -rfv " + os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/*.jpg"))
+            os.system("rm -rfv " + os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/*.png"))
+            f.save(os.path.join(current_app.config['USERFILE_DIR'],session['username'] + "/" + avatarUUID + extFileName))
+            db.execute(
+                'UPDATE AVATARS SET Avatar = ? WHERE UserName = ?',
+                (avatarUUID + extFileName, UserName,)
+            )
+            db.commit()
             return redirect(url_for('profile'))
 
 @bp.route("/upload", methods=('POST','GET'))
@@ -140,7 +159,7 @@ def deleteAccount():
             )
         db.commit()
         db.execute(
-            'DELETE FROM COMMENTS WHERE User = ?',
+            'DELETE FROM COMMENTS WHERE UserName = ?',
             (username,)
             )
         db.commit()

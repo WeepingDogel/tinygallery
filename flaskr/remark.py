@@ -23,7 +23,7 @@ def ViewFullImage(IMAGE_UUID):
             (IMAGE_UUID,)
         ).fetchone()
         Comments = db.execute(
-            "SELECT * FROM COMMENTS WHERE postUUID = ? Order By Date DESC",
+            "SELECT * FROM COMMENTS INNER JOIN AVATARS ON COMMENTS.User = AVATARS.UserName WHERE postUUID = ? Order By Date DESC",
             (IMAGE_UUID,)
             )
             
@@ -34,7 +34,10 @@ def ViewFullImage(IMAGE_UUID):
         LikedList = []
         for i in LikeTable:
             LikedList.append(str(i[0]))
-        userAvaterImage = current_app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
+        AvatarOfUser = db.execute(
+                'SELECT Avatar FROM AVATARS WHERE UserName = ?',
+                (session['username'],)).fetchone()
+        userAvaterImage = current_app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/' + AvatarOfUser['Avatar']
         return render_template(
             "remark.html", 
             PageTitle=Data['ImageTitle'],
@@ -69,7 +72,7 @@ def SendComment():
         User = session['username']
         postUUID = request.form['postUUID']
         ReplyTo = request.form['ReplyTo']
-        ReplyToUser = request.form['ReplyToUser'] + " | " + request.form['ReplyToDate']
+        ReplyToUser = request.form['ReplyToUser']
         Content = request.form['ContentOfComments']
         remarkUUID = str(uuid.uuid4())
         Date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
