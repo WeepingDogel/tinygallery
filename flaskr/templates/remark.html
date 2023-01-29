@@ -42,22 +42,30 @@
         {% endif %}
         {% for x in Comments %}
         <div class="Remarks" id="{{ x['remarkUUID'] }}">
-            <img src="/static/img/users/{{ x['User'] }}/avatar.jpg" />
-            <h1 class="ReplyToUser userName">{{ x['User'] }}</h1>
-            <p class="textFont">
-                {% if x['ReplyTo'] != "" %}
-                <a href="#{{ x['ReplyTo'] }}">
-                    <b>@{{ x['ReplyToUser'] }}</b>
-                </a>
-                {{ x['Comment'] }}
-                {% else %}
-                {{ x['Comment'] }}
+            <div class="RemarkUserBox">
+                <img src="/static/img/users/{{ x['User'] }}/{{ x['Avatar'] }}" />
+                <h1 class="ReplyToUser RemarkTitle">
+                    {{ x['User'] }}
+                </h1>
+            </div>
+            <div class="RemarkContentBox">
+                <p class="RemarkText">
+                    {% if x['ReplyTo'] != "" %}
+                    <a href="#{{ x['ReplyTo'] }}">
+                        <b>@{{ x['ReplyToUser'] }}</b>
+                    </a><br />
+                    {{ x['Comment'] }}
+                    {% else %}
+                    {{ x['Comment'] }}
+                    {% endif %}
+                </p>
+            </div>
+            <div class="RemarkDateBox">
+                {% if g.user %}
+                <button class="Reply ReplyButton" value="{{ x['remarkUUID'] }}" type="button" onclick="ReplyTo('{{ loop["index"] }}')" >Reply</button>
                 {% endif %}
-            </p>
-            <p class="textFont ReplyToDate">{{ x['Date'] }}</p>
-            {% if g.user %}
-            <button class="Reply logoutButton" value="{{ x['remarkUUID'] }}" type="button" onclick="ReplyTo('{{ loop["index"] }}')" >Reply</button>
-            {% endif %}
+                <p class="RemarkDate">{{ x['Date'] }}</p>
+            </div>
         </div>
         {% endfor %}
     </div>

@@ -42,7 +42,11 @@ def create_app(test_config=None):
             LikedList = []
             for i in LikeTable:
                 LikedList.append(str(i[0]))
-            userAvaterImage = app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/avatar.jpg'
+            Avatar = database.execute(
+                'SELECT Avatar FROM AVATARS WHERE UserName = ?',
+                (session['username'],)
+            ).fetchone()
+            userAvaterImage = app.config['PUBLIC_USERFILES'] + '/' + session['username'] + '/' + Avatar['Avatar']
             return render_template(
                 "index.html", 
                 PageTitle="HomePage", 
@@ -65,6 +69,9 @@ def create_app(test_config=None):
     def profile():
         database = db.get_db()
         if 'username' in session:
+            Avatar = database.execute(
+                'SELECT Avatar FROM AVATARS WHERE UserName = ?',
+                (session['username'],)).fetchone()
             LikeTable = database.execute(
                 "SELECT LikedPostUUID FROM ImagesLikedByUser WHERE User = ? AND LikeStatus = ?",
                 (session['username'],1,)).fetchall()
@@ -75,7 +82,7 @@ def create_app(test_config=None):
             return render_template(
                 "profile.html", 
                 userName=session['username'], 
-                AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/avatar.jpg", 
+                AvatarLink=app.config['PUBLIC_USERFILES'] + "/" + session['username'] + "/" + Avatar['Avatar'], 
                 BG_Link="static/img/defaultBG.jpg",
                 Images=ImageTable,
                 LikedList=LikedList)
