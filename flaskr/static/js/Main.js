@@ -63,12 +63,32 @@ function avatarChecking(){
     }
 }
 
+var winX = null;
+var winY = null;
+window.addEventListener('scroll',
+function () { 
+    if (winX !== null && winY !== null) { 
+        window.scrollTo(winX, winY); 
+    } 
+});
+
+function disableWindowScroll() { 
+    winX = window.scrollX; winY = window.scrollY; 
+}
+
+function enableWindowScroll() { 
+    winX = null; winY = null; 
+}
+
+
 function displayUploader(){
     var uploader = document.getElementById('mask');
     if(uploader.style.display == "block"){
         uploader.style.display = "none";
+        enableWindowScroll();
     }else{
         uploader.style.display = "block";
+        disableWindowScroll();
     }
 }
 
@@ -112,13 +132,10 @@ function ReplyTo(numID){
     scrollTo(0,0);
     let ReplyTo = document.getElementsByClassName("Reply")[numID - 1];
     let ReplyToUser = document.getElementsByClassName("ReplyToUser")[numID - 1];
-    let ReplyToDate = document.getElementsByClassName("ReplyToDate")[numID - 1];
     let InputValueOfReplyTo = document.getElementById("ReplyTo");
     let InputValueOfReplyToUser = document.getElementById("ReplyToUser");
-    let InputValueOfReplyToDate = document.getElementById("ReplyToDate");
     InputValueOfReplyTo.value = ReplyTo.value;
     InputValueOfReplyToUser.value = ReplyToUser.innerText;
-    InputValueOfReplyToDate.value = ReplyToDate.innerText;
 
     SendComments();
 }
@@ -128,8 +145,10 @@ function SendComments() {
     var Commenter = document.getElementById('mask');
     if(Commenter.style.display == "block"){
         Commenter.style.display = "none";
+        enableWindowScroll();
     }else{
         Commenter.style.display = "block";
+        disableWindowScroll();
     }
 }
 
