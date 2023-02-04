@@ -1,47 +1,54 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-a{
+
+a {
     text-decoration: none;
 }
-li{
+
+li {
     list-style: none;
 }
-body{
+
+body {
     background-color: #f2f2f2;
     /* background: linear-gradient(to right, pink, skyblue); */
 }
 
 @keyframes fadeIn {
-    from{
+    from {
         opacity: 0;
         top: 10px;
     }
-    to{
+
+    to {
         opacity: 1;
         top: 0;
     }
 }
-@keyframes scale{
+
+@keyframes scale {
     from {
         opacity: 0;
-        transform: scale(0.1,0.1);
+        transform: scale(0.1, 0.1);
     }
+
     to {
         opacity: 1;
-        transform: scale(1,1);
+        transform: scale(1, 1);
     }
 }
 
 @media screen and (min-width:1280px) {
-    .TopBar{
+    .TopBar {
         width: 100%;
         height: 80px;
         background-color: white;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
-    .ProfileBar{
+
+    .ProfileBar {
         position: absolute;
         width: 300px;
         height: 600px;
@@ -51,7 +58,8 @@ body{
         float: right;
         z-index: 1;
     }
-    .avatar{
+
+    .avatar {
         width: 224px;
         height: 224px;
         margin: 0 auto;
@@ -60,7 +68,8 @@ body{
         border-radius: 100%;
         transition: 500ms;
     }
-    .avatar img{
+
+    .avatar img {
         width: 100%;
         height: auto;
         display: block;
@@ -69,12 +78,14 @@ body{
         text-align: center;
         transition: 500ms;
     }
-    .avatar:hover{
+
+    .avatar:hover {
         width: 280px;
         height: 280px;
         transition: 500ms;
     }
-    .Content{
+
+    .Content {
         height: auto;
         max-width: 100%;
         min-height: 500px;
@@ -87,7 +98,8 @@ body{
         position: relative;
         animation: fadeIn 600ms;
     }
-    .work{
+
+    .work {
         width: 370px;
         height: 500px;
         margin: 0 auto;
@@ -96,28 +108,33 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         transition: 500ms;
     }
-    .work:hover{
+
+    .work:hover {
         transition: 500ms;
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
-        transform: scale(1.05,1.05);
+        transform: scale(1.05, 1.05);
     }
-    .work img{
+
+    .work img {
         width: 370px;
         height: 300px;
         animation: scale 600ms;
         object-fit: cover;
     }
-    .FullImageCard{
+
+    .FullImageCard {
         width: 65%;
         height: auto;
         margin: 0 auto;
     }
-    .FullImageCard img{
+
+    .FullImageCard img {
         width: 100%;
         height: auto;
         animation: scale 600ms;
     }
-    .RemarkPanel{
+
+    .RemarkPanel {
         margin: 0 auto;
         width: 30%;
         height: auto;
@@ -125,13 +142,15 @@ body{
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
         animation: scale 600ms;
     }
-    .Remarks{
+
+    .Remarks {
         width: 95%;
         height: auto;
         margin: 30px auto;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
-    .Remarks img{
+
+    .Remarks img {
         width: auto;
         height: 80px;
         display: flex;
@@ -139,25 +158,29 @@ body{
         margin: 5px;
         border-radius: 100%;
     }
-    .RemarkTitle{
+
+    .RemarkTitle {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 22px;
         line-height: 80px;
         text-indent: 1em;
     }
-    .RemarkText{
+
+    .RemarkText {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
         line-height: 20px;
         word-break: break-word;
     }
-    .RemarkText a{
+
+    .RemarkText a {
         text-indent: 0;
         display: block;
         margin-right: 0.5em;
         white-space: nowrap;
     }
-    .RemarkDate{
+
+    .RemarkDate {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 60px;
@@ -166,7 +189,8 @@ body{
         margin-left: auto;
         margin-right: 1em;
     }
-    .ReplyButton{
+
+    .ReplyButton {
         outline: none;
         width: 80px;
         height: 60px;
@@ -176,22 +200,28 @@ body{
         border: 0;
         color: black;
     }
-    .ReplyButton:hover{
+
+    .ReplyButton:hover {
         background-color: #f1f1f1;
     }
-    .ReplyButton:active{
+
+    .ReplyButton:active {
         background-color: #c4c4c4;
     }
-    .RemarkUserBox{
+
+    .RemarkUserBox {
         display: flex;
     }
-    .RemarkContentBox{
+
+    .RemarkContentBox {
         padding: 20px;
     }
-    .RemarkDateBox{
+
+    .RemarkDateBox {
         display: flex;
     }
-    .menuButton{
+
+    .menuButton {
         width: 300px;
         height: 80px;
         text-align: center;
@@ -201,14 +231,17 @@ body{
         float: right;
         transition: 500ms;
     }
-    .menuButton:hover{
+
+    .menuButton:hover {
         background-color: #f5f5f5;
         transition: 500ms;
     }
-    .menuButton:hover .ProfileBar{
+
+    .menuButton:hover .ProfileBar {
         display: block;
     }
-    .InfoPanel{
+
+    .InfoPanel {
         width: 80%;
         height: 500px;
         background-color: white;
@@ -218,14 +251,16 @@ body{
         text-align: center;
         animation: fadeIn 600ms;
     }
-    .InfoPanel img{
+
+    .InfoPanel img {
         margin-top: 20px;
         width: 150px;
         height: 150px;
         border-radius: 100%;
         display: inline-block;
     }
-    .Published{
+
+    .Published {
         width: 80%;
         height: auto;
         background-color: white;
@@ -237,7 +272,8 @@ body{
         position: relative;
         animation: fadeIn 600ms;
     }
-    .loginButton{
+
+    .loginButton {
         width: 280px;
         height: 40px;
         line-height: 40px;
@@ -250,13 +286,16 @@ body{
         color: black;
         display: block;
     }
-    .loginButton:hover{
+
+    .loginButton:hover {
         background-color: #f1f1f1;
     }
-    .loginButton:active{
+
+    .loginButton:active {
         background-color: #c4c4c4;
     }
-    .logoutButton{
+
+    .logoutButton {
         width: 280px;
         height: 40px;
         line-height: 40px;
@@ -269,13 +308,16 @@ body{
         color: black;
         display: block;
     }
-    .logoutButton:hover{
+
+    .logoutButton:hover {
         background-color: #f1f1f1;
     }
-    .logoutButton:active{
+
+    .logoutButton:active {
         background-color: #c4c4c4;
     }
-    #mask{
+
+    #mask {
         top: 0;
         display: none;
         position: absolute;
@@ -285,7 +327,8 @@ body{
         z-index: 2;
         animation: fadeIn 600ms;
     }
-    .Uploader{
+
+    .Uploader {
         width: 400px;
         height: 400px;
         background-color: white;
@@ -294,10 +337,12 @@ body{
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         animation: fadeIn 600ms;
     }
-    .Uploader h1{
+
+    .Uploader h1 {
         line-height: 60px;
     }
-    .SingleTextLine{
+
+    .SingleTextLine {
         display: block;
         width: 280px;
         height: 40px;
@@ -309,7 +354,8 @@ body{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
     }
-    .MultiText{
+
+    .MultiText {
         display: block;
         width: 280px;
         height: 80px;
@@ -323,13 +369,14 @@ body{
 }
 
 @media screen and (max-width:1280px) {
-    .TopBar{
+    .TopBar {
         width: 100%;
         height: 80px;
         background-color: white;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
-    .ProfileBar{
+
+    .ProfileBar {
         position: absolute;
         width: 300px;
         height: 600px;
@@ -339,7 +386,8 @@ body{
         float: right;
         z-index: 1;
     }
-    .avatar{
+
+    .avatar {
         width: 224px;
         height: 224px;
         margin: 0 auto;
@@ -348,7 +396,8 @@ body{
         border-radius: 100%;
         transition: 500ms;
     }
-    .avatar img{
+
+    .avatar img {
         width: 100%;
         height: auto;
         display: block;
@@ -357,12 +406,14 @@ body{
         text-align: center;
         transition: 500ms;
     }
-    .avatar:hover{
+
+    .avatar:hover {
         width: 280px;
         height: 280px;
         transition: 500ms;
     }
-    .Content{
+
+    .Content {
         height: auto;
         max-width: 100%;
         min-height: 500px;
@@ -376,7 +427,8 @@ body{
         animation: fadeIn 600ms;
         /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); */
     }
-    .work{
+
+    .work {
         width: 300px;
         height: 500px;
         margin: 0 auto;
@@ -385,28 +437,33 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         transition: 500ms;
     }
-    .work:hover{
+
+    .work:hover {
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         transition: 500ms;
-        transform: scale(1.05,1.05);
+        transform: scale(1.05, 1.05);
     }
-    .work img{
+
+    .work img {
         width: 300px;
         height: 300px;
         animation: scale 600ms;
         object-fit: cover;
     }
-    .FullImageCard{
+
+    .FullImageCard {
         width: 65%;
         height: auto;
         margin: 0 auto;
     }
-    .FullImageCard img{
+
+    .FullImageCard img {
         width: 100%;
         height: auto;
         animation: scale 600ms;
     }
-    .RemarkPanel{
+
+    .RemarkPanel {
         margin: 0 auto;
         width: 30%;
         height: auto;
@@ -414,13 +471,15 @@ body{
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
         animation: scale 600ms;
     }
-    .Remarks{
+
+    .Remarks {
         width: 95%;
         height: auto;
         margin: 30px auto;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
-    .Remarks img{
+
+    .Remarks img {
         width: auto;
         height: 80px;
         display: flex;
@@ -428,25 +487,29 @@ body{
         margin: 5px;
         border-radius: 100%;
     }
-    .RemarkTitle{
+
+    .RemarkTitle {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 22px;
         line-height: 80px;
         text-indent: 1em;
     }
-    .RemarkText{
+
+    .RemarkText {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
         line-height: 20px;
         word-break: break-word;
     }
-    .RemarkText a{
+
+    .RemarkText a {
         text-indent: 0;
         display: block;
         margin-right: 0.5em;
         white-space: nowrap;
     }
-    .RemarkDate{
+
+    .RemarkDate {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 60px;
@@ -455,7 +518,8 @@ body{
         margin-left: auto;
         margin-right: 1em;
     }
-    .ReplyButton{
+
+    .ReplyButton {
         outline: none;
         width: 80px;
         height: 60px;
@@ -465,22 +529,28 @@ body{
         border: 0;
         color: black;
     }
-    .ReplyButton:hover{
+
+    .ReplyButton:hover {
         background-color: #f1f1f1;
     }
-    .ReplyButton:active{
+
+    .ReplyButton:active {
         background-color: #c4c4c4;
     }
-    .RemarkUserBox{
+
+    .RemarkUserBox {
         display: flex;
     }
-    .RemarkContentBox{
+
+    .RemarkContentBox {
         padding: 20px;
     }
-    .RemarkDateBox{
+
+    .RemarkDateBox {
         display: flex;
     }
-    .menuButton{
+
+    .menuButton {
         width: 300px;
         height: 80px;
         text-align: center;
@@ -490,14 +560,17 @@ body{
         float: right;
         transition: 500ms;
     }
-    .menuButton:hover{
+
+    .menuButton:hover {
         background-color: #f5f5f5;
         transition: 500ms;
     }
-    .menuButton:hover .ProfileBar{
+
+    .menuButton:hover .ProfileBar {
         display: block;
     }
-    .InfoPanel{
+
+    .InfoPanel {
         width: 80%;
         height: 500px;
         background-color: white;
@@ -507,14 +580,16 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         animation: fadeIn 600ms;
     }
-    .InfoPanel img{
+
+    .InfoPanel img {
         margin-top: 20px;
         width: 150px;
         height: 150px;
         border-radius: 100%;
         display: inline-block;
     }
-    .Published{
+
+    .Published {
         width: 80%;
         height: auto;
         background-color: white;
@@ -526,7 +601,8 @@ body{
         position: relative;
         animation: fadeIn 600ms;
     }
-    .loginButton{
+
+    .loginButton {
         width: 280px;
         height: 40px;
         line-height: 40px;
@@ -539,13 +615,16 @@ body{
         color: black;
         display: block;
     }
-    .loginButton:hover{
+
+    .loginButton:hover {
         background-color: #f1f1f1;
     }
-    .loginButton:active{
+
+    .loginButton:active {
         background-color: #c4c4c4;
     }
-    .logoutButton{
+
+    .logoutButton {
         width: 280px;
         height: 40px;
         line-height: 40px;
@@ -558,13 +637,16 @@ body{
         color: black;
         display: block;
     }
-    .logoutButton:hover{
+
+    .logoutButton:hover {
         background-color: #f1f1f1;
     }
-    .logoutButton:active{
+
+    .logoutButton:active {
         background-color: #c4c4c4;
     }
-    #mask{
+
+    #mask {
         top: 0;
         display: none;
         position: absolute;
@@ -574,7 +656,8 @@ body{
         z-index: 2;
         animation: fadeIn 600ms;
     }
-    .Uploader{
+
+    .Uploader {
         width: 400px;
         height: 400px;
         background-color: white;
@@ -583,10 +666,12 @@ body{
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         animation: fadeIn 600ms;
     }
-    .Uploader h1{
+
+    .Uploader h1 {
         line-height: 60px;
     }
-    .SingleTextLine{
+
+    .SingleTextLine {
         display: block;
         width: 280px;
         height: 40px;
@@ -598,7 +683,8 @@ body{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
     }
-    .MultiText{
+
+    .MultiText {
         display: block;
         width: 280px;
         height: 80px;
@@ -612,13 +698,14 @@ body{
 }
 
 @media screen and (max-width:810px) {
-    .TopBar{
+    .TopBar {
         width: 100%;
         height: 180px;
         background-color: white;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
-    .ProfileBar{
+
+    .ProfileBar {
         position: absolute;
         width: 100%;
         height: 600px;
@@ -627,7 +714,8 @@ body{
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
-    .avatar{
+
+    .avatar {
         width: 224px;
         height: 224px;
         margin: 0 auto;
@@ -636,7 +724,8 @@ body{
         border-radius: 100%;
         transition: 500ms;
     }
-    .avatar img{
+
+    .avatar img {
         width: 100%;
         height: auto;
         display: block;
@@ -645,12 +734,14 @@ body{
         text-align: center;
         transition: 500ms;
     }
-    .avatar:hover{
+
+    .avatar:hover {
         width: 280px;
         height: 280px;
         transition: 500ms;
     }
-    .Content{
+
+    .Content {
         height: auto;
         max-width: 100%;
         min-height: 500px;
@@ -662,7 +753,8 @@ body{
         flex-wrap: wrap;
         animation: fadeIn 600ms;
     }
-    .work{
+
+    .work {
         width: 100%;
         height: 500px;
         margin: 0 auto;
@@ -671,28 +763,33 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         transition: 500ms;
     }
-    .work:hover{
+
+    .work:hover {
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
-        transform: scale(0.9,0.9);
+        transform: scale(0.9, 0.9);
         transition: 500ms;
     }
-    .work img{
+
+    .work img {
         width: 100%;
         height: 300px;
         animation: scale 600ms;
         object-fit: cover;
     }
-    .FullImageCard{
+
+    .FullImageCard {
         margin: 0 auto;
         width: 100%;
         height: auto;
     }
-    .FullImageCard img{
+
+    .FullImageCard img {
         width: 100%;
         height: auto;
         animation: scale 600ms;
     }
-    .RemarkPanel{
+
+    .RemarkPanel {
         margin: 0 auto;
         width: 100%;
         height: auto;
@@ -700,13 +797,15 @@ body{
         box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
         animation: scale 600ms;
     }
-    .Remarks{
+
+    .Remarks {
         width: 95%;
         height: auto;
         margin: 30px auto;
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     }
-    .Remarks img{
+
+    .Remarks img {
         width: auto;
         height: 80px;
         display: flex;
@@ -714,25 +813,29 @@ body{
         margin: 5px;
         border-radius: 100%;
     }
-    .RemarkTitle{
+
+    .RemarkTitle {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 22px;
         line-height: 80px;
         text-indent: 1em;
     }
-    .RemarkText{
+
+    .RemarkText {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
         line-height: 20px;
         word-break: break-word;
     }
-    .RemarkText a{
+
+    .RemarkText a {
         text-indent: 0;
         display: block;
         margin-right: 0.5em;
         white-space: nowrap;
     }
-    .RemarkDate{
+
+    .RemarkDate {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 16px;
         line-height: 60px;
@@ -741,7 +844,8 @@ body{
         margin-left: auto;
         margin-right: 1em;
     }
-    .ReplyButton{
+
+    .ReplyButton {
         outline: none;
         width: 80px;
         height: 60px;
@@ -751,22 +855,28 @@ body{
         border: 0;
         color: black;
     }
-    .ReplyButton:hover{
+
+    .ReplyButton:hover {
         background-color: #f1f1f1;
     }
-    .ReplyButton:active{
+
+    .ReplyButton:active {
         background-color: #c4c4c4;
     }
-    .RemarkUserBox{
+
+    .RemarkUserBox {
         display: flex;
     }
-    .RemarkContentBox{
+
+    .RemarkContentBox {
         padding: 20px;
     }
-    .RemarkDateBox{
+
+    .RemarkDateBox {
         display: flex;
     }
-    .menuButton{
+
+    .menuButton {
         width: 100%;
         height: 80px;
         text-align: center;
@@ -776,14 +886,17 @@ body{
         float: none;
         transition: 500ms;
     }
-    .menuButton:hover{
+
+    .menuButton:hover {
         background-color: #f5f5f5;
         transition: 500ms;
     }
-    .menuButton:hover .ProfileBar{
+
+    .menuButton:hover .ProfileBar {
         display: block;
     }
-    .InfoPanel{
+
+    .InfoPanel {
         width: 100%;
         height: 500px;
         background-color: white;
@@ -793,14 +906,16 @@ body{
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
         animation: fadeIn 600ms;
     }
-    .InfoPanel img{
+
+    .InfoPanel img {
         margin-top: 20px;
         width: 150px;
         height: 150px;
         border-radius: 100%;
         display: inline-block;
     }
-    .Published{
+
+    .Published {
         width: 100%;
         height: auto;
         background-color: white;
@@ -812,7 +927,8 @@ body{
         position: relative;
         animation: fadeIn 600ms;
     }
-    .loginButton{
+
+    .loginButton {
         width: 80%;
         height: 40px;
         line-height: 40px;
@@ -825,13 +941,16 @@ body{
         color: black;
         display: block;
     }
-    .loginButton:hover{
+
+    .loginButton:hover {
         background-color: #f1f1f1;
     }
-    .loginButton:active{
+
+    .loginButton:active {
         background-color: #c4c4c4;
     }
-    .logoutButton{
+
+    .logoutButton {
         width: 80%;
         height: 40px;
         line-height: 40px;
@@ -844,12 +963,16 @@ body{
         color: black;
         display: block;
     }
-    .logoutButton:hover{
+
+    .logoutButton:hover {
         background-color: #f1f1f1;
     }
-    .logoutButton:active{
+
+    .logoutButton:active {
         background-color: #c4c4c4;
-    }#mask{
+    }
+
+    #mask {
         top: 0;
         display: none;
         position: absolute;
@@ -859,7 +982,8 @@ body{
         z-index: 2;
         animation: fadeIn 600ms;
     }
-    .Uploader{
+
+    .Uploader {
         width: 100%;
         height: 100%;
         background-color: white;
@@ -867,10 +991,12 @@ body{
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         animation: fadeIn 600ms;
     }
-    .Uploader h1{
+
+    .Uploader h1 {
         line-height: 60px;
     }
-    .SingleTextLine{
+
+    .SingleTextLine {
         display: block;
         width: 90%;
         height: 40px;
@@ -882,7 +1008,8 @@ body{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 18px;
     }
-    .MultiText{
+
+    .MultiText {
         display: block;
         width: 90%;
         height: 80px;

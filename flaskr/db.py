@@ -2,8 +2,10 @@
 # Read and Write the DATABASE
 
 import sqlite3
-import click,os
+import click
+import os
 from flask import current_app, g
+
 
 def get_db():
     if 'db' not in g:
@@ -15,11 +17,13 @@ def get_db():
 
     return g.db
 
+
 def close_db(e=None):
     db = g.pop('db', None)
 
     if db is not None:
         db.close()
+
 
 def init_db():
     db = get_db()
@@ -28,10 +32,12 @@ def init_db():
         db.executescript(f.read().decode('utf-8'))
         os.system("rm -rf " + current_app.config['USERFILE_DIR'])
 
+
 @click.command('init-db')
 def init_db_command():
     init_db()
     click.echo("Initialized the database.")
+
 
 def init_app(app):
     app.teardown_appcontext(close_db)
