@@ -90,6 +90,9 @@ def logout():
 
 @bp.route("/avatar", methods=('POST', 'GET'))
 def avatar():
+    def allowed_file(filename):
+        return '.' in filename and \
+            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
     if request.method == "POST":
         UserName = session['username']
         avatarUUID = str(uuid.uuid4())
@@ -99,18 +102,21 @@ def avatar():
         if f.filename == '':
             return redirect(url_for('profile'))
         else:
-            os.system(
-                "rm -rfv " + os.path.join(current_app.config['USERFILE_DIR'], session['username'] + "/*.jpg"))
-            os.system(
-                "rm -rfv " + os.path.join(current_app.config['USERFILE_DIR'], session['username'] + "/*.png"))
-            f.save(os.path.join(
-                current_app.config['USERFILE_DIR'], session['username'] + "/" + avatarUUID + extFileName))
-            db.execute(
-                'UPDATE AVATARS SET Avatar = ? WHERE UserName = ?',
-                (avatarUUID + extFileName, UserName,)
-            )
-            db.commit()
-            return redirect(url_for('profile'))
+            if allowed_file(extFileName):
+                os.system(
+                    "rm -rfv " + os.path.join(current_app.config['USERFILE_DIR'], session['username'] + "/*.jpg"))
+                os.system(
+                    "rm -rfv " + os.path.join(current_app.config['USERFILE_DIR'], session['username'] + "/*.png"))
+                f.save(os.path.join(
+                    current_app.config['USERFILE_DIR'], session['username'] + "/" + avatarUUID + extFileName))
+                db.execute(
+                    'UPDATE AVATARS SET Avatar = ? WHERE UserName = ?',
+                    (avatarUUID + extFileName, UserName,)
+                )
+                db.commit()
+                return redirect(url_for('profile'))
+            else:
+                return "Invalid Filename " + f.filename + " <a href='/'>Back</a>"
 
 
 @bp.route("/upload", methods=('POST', 'GET'))
